@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -12,20 +13,23 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    
+  }
+
   render() {
     return (
       <body>
         <header>
-          <h1> </h1>
-          <
+          <h1>BBQ</h1>
+          <img />
         </header>
         <main>
-
+          <SearchForm />
+          <JointContainer joints={this.state.joints}/>
+          <Route path='/favorites' render={() => <FavPage joints={this.state.joints}}
         </main>
       </body>
     )
   }
 }
-
-export default App;
-// prop types
