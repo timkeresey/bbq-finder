@@ -5,6 +5,7 @@ import './JointContainer.css';
 const JointContainer = () => {
   return (
     <section className='container'>
+      <h1>Joints in {}</h1>
       <Joint
       name={}
       address={}
