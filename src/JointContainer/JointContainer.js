@@ -1,4 +1,5 @@
 import React from 'react';
+import Joint from '../Joint/Joint';
 import './JointContainer.css';
 
 const JointContainer = () => {
