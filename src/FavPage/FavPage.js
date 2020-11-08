@@ -1,4 +1,5 @@
 import React from 'react';
+import Favorite from '../Favorite/Favorite';
 import '/.FavPage.css';
 
 const FavPage = () => {

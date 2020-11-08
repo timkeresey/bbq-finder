@@ -21,7 +21,7 @@ class Joint extends Component {
           <p className='phone'>{}</p>
         </article>
         <button className='flame-icon' onClick={() => }>
-          <img src='src/images/flame-icon.png' />
+          <img src='src/images/flame-black.png' />
         </button>
       </div>
     )
