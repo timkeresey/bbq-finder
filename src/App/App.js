@@ -22,14 +22,6 @@ class App extends Component {
     getJoints(cityID)
       .then(data => this.setState({ joints: data.restaurants }))
       .catch(error => error => this.setState({error: error.message}))
-
-      // let spot = {
-      //   id: place.restaurant.id,
-      //   name: place.restaurant.name,
-      //   address: `${place.restaurant.location.address}, ${place.restaurant.location.city}`,
-      //   phone: place.restaurant.phone_numbers
-      // };
-
   };
 
   searchCity = (city, stateUS) => {
@@ -38,25 +30,40 @@ class App extends Component {
     .then(data => this.setJoints(data.location_suggestions[0].id))
     .catch(error => error => this.setState({error: error.message}))
   };
-  //display error message in catch
+
+  addFav = (newFav) => {
+    this.setState({ favs: [...this.state.favs, newFav] });
+  }
+
+  unFav = (phone) => {
+    const favUpdate = this.state.favs.filter(fav => {
+      return fav.phone !== phone
+    });
+    this.setState({ favs: favUpdate });
+  }
 
   render() {
     return (
       <body>
-        <header>
-          <h1>BBQ</h1>
-          <nav className='link'>
-            <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
-          </nav>
-
-        </header>
-        <main>
-          <SearchForm searchCity={this.searchCity}
-
-          />
-          <JointContainer joints={this.state.joints}/>
-          <Route path='/favorites' render={() => <FavPage joints={this.state.favs} />} />
-        </main>
+        <Route exact path='/'>
+          <header>
+            <h1>BBQ</h1>
+            <nav className='link'>
+              <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
+            </nav>
+          </header>
+          <main>
+            <SearchForm searchCity={this.searchCity} />
+            <JointContainer
+            addFav={this.addFav}
+            joints={this.state.joints}/>
+          </main>
+        </Route>
+        <Route path='/favorites' render={() => <
+          FavPage
+          favs={this.state.favs}
+          unFav={this.unFav}
+          />} />
       </body>
     )
   }

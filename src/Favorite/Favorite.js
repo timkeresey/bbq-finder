@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import FlameOrange from '../images/flame-orange.png';
 import './Favorite.css';
 
 class Favorite extends Component {
   constructor({ name, address, phone }) {
     super({ name, address, phone });
     this.state = {
-      name: '',
-      address: '',
-      phone: ''
+      name: name,
+      address: address,
+      phone: phone
     }
   }
 
@@ -20,8 +21,8 @@ class Favorite extends Component {
           <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
         </article>
-        <button className='flame-icon' >
-          <img src='src/images/flame-orange.png' />
+        <button className='flame-icon' onClick={() => this.props.unFav(this.state.phone)} >
+          <img src={FlameOrange} alt='favorites' />
         </button>
       </div>
     )

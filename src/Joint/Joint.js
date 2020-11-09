@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import FlameBlack from '../images/flame-black.png';
+import FlameOrange from '../images/flame-orange.png';
+
 import './Joint.css';
 
 class Joint extends Component {
@@ -7,8 +10,23 @@ class Joint extends Component {
     this.state = {
       name: name,
       address: address,
-      phone: phone
+      phone: phone,
+      isFav: false
     }
+  }
+
+  toggleFav = () => {
+    if(!this.state.isFav) {
+      this.passFav();
+    };
+    this.setState(state => ({
+      isFav: !state.isFav
+    }));
+  }
+
+  passFav = () => {
+    const newFav = this.state;
+    this.props.addFav(newFav);
   }
 
   render() {
@@ -20,8 +38,10 @@ class Joint extends Component {
           <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
         </article>
-        <button className='flame-icon' >
-          <img src='src/images/flame-black.png' />
+        <button className='flame-icon' onClick={() => this.toggleFav()}>
+        {!this.state.isFav
+          ? <img src={FlameBlack} alt='favorite'/>
+          : <img src={FlameOrange} alt='favorite'/>}
         </button>
       </div>
     )
