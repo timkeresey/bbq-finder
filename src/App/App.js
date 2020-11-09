@@ -18,8 +18,8 @@ class App extends Component {
     }
   }
 
-  setJoints = () => {
-    getJoints(this.cityID)
+  setJoints = (cityID) => {
+    getJoints(cityID)
       .then(data => this.setState({ joints: data.restaurants }))
       .catch(error => error => this.setState({error: error.message}))
 
@@ -33,11 +33,10 @@ class App extends Component {
   };
 
   searchCity = (city, stateUS) => {
+    let cityID
     getCityID(city, stateUS)
-    .then(data => this.setState({
-      cityID: data.location_suggestions[0].id
-    }))
-    .then(this.setJoints())
+    .then(data => this.setJoints(data.location_suggestions[0].id))
+    .catch(error => error => this.setState({error: error.message}))
   };
   //display error message in catch
 

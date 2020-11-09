@@ -5,10 +5,9 @@ class Joint extends Component {
   constructor({ name, address, phone }) {
     super({ name, address, phone });
     this.state = {
-      name: '',
-      address: '',
-      city: '',
-      phone: ''
+      name: name,
+      address: address,
+      phone: phone
     }
   }
 
@@ -18,7 +17,7 @@ class Joint extends Component {
         <img />
         <article className='info'>
           <p className='name'>{this.state.name}</p>
-          <p className='address'>{this.state.address}, {this.state.city}</p>
+          <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
         </article>
         <button className='flame-icon' >

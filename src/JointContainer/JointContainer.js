@@ -11,11 +11,10 @@ const JointContainer = ({ joints }) => {
     return joints.map(joint => {
       return (
         <section className='container'>
-          <h1>Joints in {joint.restaurant.location.city}</h1>
           <Joint
           key={joint.restaurant.id}
           name={joint.restaurant.name}
-          address={joint.restaurant.location.address} city={joint.restaurant.location.city}
+          address={joint.restaurant.location.address} 
           phone={joint.restaurant.phone_numbers}
           />
         </section>
