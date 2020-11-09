@@ -6,7 +6,7 @@ import './JointContainer.css';
 const JointContainer = ({ joints, addFav }) => {
   if (joints.length === 0) {
     return (
-      <h2 className='search-msg'>Where Are You Looking For BBQ?</h2>
+      <h2 className='search-msg'>Where Do You Wanna Get BBQ?</h2>
     )
   } else {
     return joints.map(joint => {
