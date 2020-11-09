@@ -9,7 +9,7 @@ export const getCityID = (city, stateUS) => {
 };
 
 export const getJoints = (cityID) => {
-  fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=${cityID}&entity_type=city`, {
+  fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=${cityID}&entity_type=city&sort=rating`, {
     headers: {
       Accept: "application/json",
       "User-Key": "b5e1eb73b37d45f8ccfa51f068bf1f87"

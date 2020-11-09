@@ -19,13 +19,30 @@ class App extends Component {
   }
 
   mapJoints = (data) => {
-    
+    data.restaurants.map(place => {
+      let spot = {
+        id: place.restaurant.id,
+        name: place.restaurant.name,
+        address: `${place.restaurant.location.address}, ${place.restaurant.location.city}`,
+        phone: place.restaurant.phone_numbers
+      };
+      this.setState({ joints: [...this.state.joints, spot] })
+    });
+  };
+
+  displayJoints = () => {
+    getJoints(this.cityID)
+      .then(data => mapJoints(data))
+      .catch(error => console.log('getJoints error'))
   }
 
   searchCity = (e) => {
+    let id = String(data.location_suggestions[0].id);
     getCityID(this.state.city, this.state.stateUS)
-      .then(data => )
-  }
+      .then(data => this.setState({ cityID: id }))
+      .then(data => displayJoints())
+      .catch(error => console.log('getCityID error'))
+  };
 
   render() {
     return (
