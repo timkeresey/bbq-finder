@@ -35,6 +35,13 @@ class App extends Component {
     this.setState({ favs: [...this.state.favs, newFav] });
   }
 
+  unFav = (phone) => {
+    const favUpdate = this.state.favs.filter(fav => {
+      return fav.phone !== phone
+    });
+    this.setState({ favs: favUpdate });
+  }
+
   render() {
     return (
       <body>

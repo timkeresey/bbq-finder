@@ -24,8 +24,6 @@ class Joint extends Component {
     }));
   }
 
-
-
   passFav = () => {
     const newFav = this.state;
     this.props.addFav(newFav);

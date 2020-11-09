@@ -20,7 +20,7 @@ class Favorite extends Component {
           <p className='name'>{this.state.name}</p>
           <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
-        </article>
+        </article> 
         <button className='flame-icon' >
           <img src={FlameOrange} alt='favorites' />
         </button>
