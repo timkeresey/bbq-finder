@@ -18,8 +18,13 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  mapJoints = (data) => {
+    
+  }
 
+  searchCity = (e) => {
+    getCityID(this.state.city, this.state.stateUS)
+      .then(data => )
   }
 
   render() {
