@@ -2,7 +2,7 @@ import React from 'react';
 import Joint from '../Joint/Joint';
 import './JointContainer.css';
 
-const JointContainer = ({ joints }) => {
+const JointContainer = ({ joints, addFav }) => {
   if (joints.length === 0) {
     return (
       <h2 className='search-msg'>Where Are You Looking For BBQ?</h2>
@@ -13,8 +13,9 @@ const JointContainer = ({ joints }) => {
         <section className='container'>
           <Joint
           key={joint.restaurant.id}
+          addFav={addFav}
           name={joint.restaurant.name}
-          address={joint.restaurant.location.address} 
+          address={joint.restaurant.location.address}
           phone={joint.restaurant.phone_numbers}
           />
         </section>

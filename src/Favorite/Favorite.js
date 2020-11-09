@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import FlameOrange from '../images/flame-orange.png';
+import FlameBlack from '../images/flame-black.png';
+
 import './Favorite.css';
 
 class Favorite extends Component {

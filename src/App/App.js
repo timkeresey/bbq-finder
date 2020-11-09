@@ -22,14 +22,6 @@ class App extends Component {
     getJoints(cityID)
       .then(data => this.setState({ joints: data.restaurants }))
       .catch(error => error => this.setState({error: error.message}))
-
-      // let spot = {
-      //   id: place.restaurant.id,
-      //   name: place.restaurant.name,
-      //   address: `${place.restaurant.location.address}, ${place.restaurant.location.city}`,
-      //   phone: place.restaurant.phone_numbers
-      // };
-
   };
 
   searchCity = (city, stateUS) => {
@@ -38,7 +30,10 @@ class App extends Component {
     .then(data => this.setJoints(data.location_suggestions[0].id))
     .catch(error => error => this.setState({error: error.message}))
   };
-  //display error message in catch
+
+  addFav = (newFav) => {
+    this.setState({ favs: [...this.state.favs, newFav] });
+  }
 
   render() {
     return (
@@ -54,7 +49,9 @@ class App extends Component {
           <SearchForm searchCity={this.searchCity}
 
           />
-          <JointContainer joints={this.state.joints}/>
+          <JointContainer
+          addFav={this.addFav}
+          joints={this.state.joints}/>
           <Route path='/favorites' render={() => <FavPage joints={this.state.favs} />} />
         </main>
       </body>
