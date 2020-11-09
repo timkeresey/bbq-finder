@@ -36,7 +36,7 @@ class App extends Component {
       .catch(error => console.log('getJoints error'))
   }
 
-  searchCity = (e) => {
+  searchCity = () => {
     let id = String(data.location_suggestions[0].id);
     getCityID(this.state.city, this.state.stateUS)
       .then(data => this.setState({ cityID: id }))
