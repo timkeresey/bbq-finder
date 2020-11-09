@@ -38,22 +38,21 @@ class App extends Component {
   render() {
     return (
       <body>
-        <header>
-          <h1>BBQ</h1>
-          <nav className='link'>
-            <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
-          </nav>
-
-        </header>
-        <main>
-          <SearchForm searchCity={this.searchCity}
-
-          />
-          <JointContainer
-          addFav={this.addFav}
-          joints={this.state.joints}/>
-          <Route path='/favorites' render={() => <FavPage joints={this.state.favs} />} />
-        </main>
+        <Route exact path='/'>
+          <header>
+            <h1>BBQ</h1>
+            <nav className='link'>
+              <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
+            </nav>
+          </header>
+          <main>
+            <SearchForm searchCity={this.searchCity} />
+            <JointContainer
+            addFav={this.addFav}
+            joints={this.state.joints}/>
+          </main>
+        </Route>
+        <Route path='/favorites' render={() => <FavPage favs={this.state.favs} />} />
       </body>
     )
   }

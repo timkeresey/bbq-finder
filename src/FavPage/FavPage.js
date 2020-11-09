@@ -8,19 +8,24 @@ const FavPage = ({ favs }) => {
       <h2 className='fav-msg'>Pick Some Joints You Gotta Have!</h2>
     )
   } else {
-    favs.map(fav => {
+    const cards = favs.map(fav => {
       return (
-        <section className='page'>
-          <h1>Joints You Gotta Have</h1>
+        <div className='fav-card'>
           <Favorite
           key={Date.now()}
           name={fav.name}
           address={fav.address}
           phone={fav.phone}
           />
-        </section>
+        </div>
       )
-    })
+    });
+    return (
+      <section className='page'>
+        <h1>Joints You Gotta Have</h1>
+        <div className='fav-area'>{cards}</div>
+      </section>
+    )
   }
 
 }
