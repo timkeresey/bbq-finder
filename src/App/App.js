@@ -59,8 +59,8 @@ class App extends Component {
             joints={this.state.joints}/>
           </main>
         </Route>
-        <Route path='/favorites' render={() => <
-          FavPage
+        <Route path='/favorites' render={() =>
+          <FavPage
           favs={this.state.favs}
           unFav={this.unFav}
           />} />
