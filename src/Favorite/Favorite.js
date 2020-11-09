@@ -27,3 +27,5 @@ class Favorite extends Component {
     )
   }
 }
+
+export default Favorite;

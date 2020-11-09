@@ -27,4 +27,6 @@ class Joint extends Component {
     )
   }
 }
+
+export default Joint;
 //conditional render the icon img in method return

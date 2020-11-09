@@ -13,12 +13,15 @@ const JointContainer = ({ city, joints }) => {
         <section className='container'>
           <h1>Joints in {}</h1>
           <Joint
-          name={}
-          address={}
-          phone={}
+          key={index}
+          name={joint.name}
+          address={joint.address}
+          phone={joint.phone}
           />
         </section>
       )
     })
   }
 }
+
+export default JointContainer;

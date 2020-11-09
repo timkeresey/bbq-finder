@@ -13,9 +13,10 @@ const FavPage = ({ favs }) => {
         <section className='page'>
           <h1>Joints You Gotta Have</h1>
           <Favorite
-          name={}
-          address={}
-          phone={}
+          key={index}
+          name={fav.name}
+          address={fav.address}
+          phone={fav.phone}
           />
         </section>
       )
@@ -23,3 +24,5 @@ const FavPage = ({ favs }) => {
   }
 
 }
+
+export default FavPage;
