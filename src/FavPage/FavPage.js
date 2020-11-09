@@ -1,6 +1,6 @@
 import React from 'react';
 import Favorite from '../Favorite/Favorite';
-import '/.FavPage.css';
+import './FavPage.css';
 
 const FavPage = ({ favs }) => {
   if(favs.length === 0){
@@ -13,7 +13,7 @@ const FavPage = ({ favs }) => {
         <section className='page'>
           <h1>Joints You Gotta Have</h1>
           <Favorite
-          key={index}
+          key={Date.now()}
           name={fav.name}
           address={fav.address}
           phone={fav.phone}

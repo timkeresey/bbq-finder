@@ -6,26 +6,46 @@ class SearchForm extends Component {
     super(props);
     this.state = {
       city: '',
-      stateUS: ''
+      stateUS: '',
+      cityID: ''
     }
+  }
+
+  resetInputs = () => {
+    this.setState({
+      city: '',
+      stateUS: '',
+      cityID: ''
+    })
+  }
+
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  }
+
+  submitSearch = (e) => {
+    e.preventDefault();
+    this.props.searchCity(this.state.city, this.state.stateUS);
+    this.resetInputs();
   }
 
   render() {
     return (
       <form className='search-form'>
-        <label htmlFor='city'>City</label>
+        <label htmlFor='city-search'>City</label>
         <input
-        className='search'
-        id='city'
-        value={}
-        onChange={}
+        id='city-search'
+        name='city'
+        type='text'
+        value={this.state.city}
+        onChange={e => this.handleChange(e)}
         />
         <label htmlFor='stateUS'>State</label>
         <input
-        className='search'
+        name='stateUS'
         id='stateUS'
         list='states'
-        onChange={}
+        onChange={e => this.handleChange(e)}
         />
         <datalist id='states'>
           <option value='AL' name='AL'/>
@@ -85,7 +105,7 @@ class SearchForm extends Component {
           <option value='PR' name='PR'/>
           <option value='VI' name='VI'/>
         </datalist>
-        <input type="submit" value="Search"/>
+        <input type="submit" value="Search" onClick={e => this.submitSearch(e)}/>
       </form>
     )
   }

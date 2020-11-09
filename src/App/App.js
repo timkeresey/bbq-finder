@@ -18,31 +18,27 @@ class App extends Component {
     }
   }
 
-  mapJoints = (data) => {
-    data.restaurants.map(place => {
-      let spot = {
-        id: place.restaurant.id,
-        name: place.restaurant.name,
-        address: `${place.restaurant.location.address}, ${place.restaurant.location.city}`,
-        phone: place.restaurant.phone_numbers
-      };
-      this.setState({ joints: [...this.state.joints, spot] })
-    });
+  setJoints = (cityID) => {
+    getJoints(cityID)
+      .then(data => this.setState({ joints: data.restaurants }))
+      .catch(error => error => this.setState({error: error.message}))
+
+      // let spot = {
+      //   id: place.restaurant.id,
+      //   name: place.restaurant.name,
+      //   address: `${place.restaurant.location.address}, ${place.restaurant.location.city}`,
+      //   phone: place.restaurant.phone_numbers
+      // };
+
   };
 
-  displayJoints = () => {
-    getJoints(this.cityID)
-      .then(data => mapJoints(data))
-      .catch(error => console.log('getJoints error'))
-  }
-
-  searchCity = (e) => {
-    let id = String(data.location_suggestions[0].id);
-    getCityID(this.state.city, this.state.stateUS)
-      .then(data => this.setState({ cityID: id }))
-      .then(data => displayJoints())
-      .catch(error => console.log('getCityID error'))
+  searchCity = (city, stateUS) => {
+    let cityID
+    getCityID(city, stateUS)
+    .then(data => this.setJoints(data.location_suggestions[0].id))
+    .catch(error => error => this.setState({error: error.message}))
   };
+  //display error message in catch
 
   render() {
     return (
@@ -52,10 +48,12 @@ class App extends Component {
           <nav className='link'>
             <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
           </nav>
-          <img />
+
         </header>
         <main>
-          <SearchForm />
+          <SearchForm searchCity={this.searchCity}
+
+          />
           <JointContainer joints={this.state.joints}/>
           <Route path='/favorites' render={() => <FavPage joints={this.state.favs} />} />
         </main>

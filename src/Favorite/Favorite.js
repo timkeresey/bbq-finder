@@ -16,11 +16,11 @@ class Favorite extends Component {
       <div className='fav-card'>
         <img />
         <article className='info'>
-          <p className='name'>{}</p>
-          <p className='address'>{}</p>
-          <p className='phone'>{}</p>
+          <p className='name'>{this.state.name}</p>
+          <p className='address'>{this.state.address}</p>
+          <p className='phone'>{this.state.phone}</p>
         </article>
-        <button className='flame-icon' onClick={() => }>
+        <button className='flame-icon' >
           <img src='src/images/flame-orange.png' />
         </button>
       </div>

@@ -2,21 +2,20 @@ import React from 'react';
 import Joint from '../Joint/Joint';
 import './JointContainer.css';
 
-const JointContainer = ({ city, joints }) => {
-  if (joints.length > 0) {
+const JointContainer = ({ joints }) => {
+  if (joints.length === 0) {
     return (
-      <h2 className='search-msg'>Which City?</h2>
+      <h2 className='search-msg'>Where Are You Looking For BBQ?</h2>
     )
   } else {
-    joints.map(joint => {
+    return joints.map(joint => {
       return (
         <section className='container'>
-          <h1>Joints in {}</h1>
           <Joint
-          key={index}
-          name={joint.name}
-          address={joint.address}
-          phone={joint.phone}
+          key={joint.restaurant.id}
+          name={joint.restaurant.name}
+          address={joint.restaurant.location.address} 
+          phone={joint.restaurant.phone_numbers}
           />
         </section>
       )

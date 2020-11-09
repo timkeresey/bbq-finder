@@ -5,9 +5,9 @@ class Joint extends Component {
   constructor({ name, address, phone }) {
     super({ name, address, phone });
     this.state = {
-      name: '',
-      address: '',
-      phone: ''
+      name: name,
+      address: address,
+      phone: phone
     }
   }
 
@@ -16,11 +16,11 @@ class Joint extends Component {
       <div className='card'>
         <img />
         <article className='info'>
-          <p className='name'>{}</p>
-          <p className='address'>{}</p>
-          <p className='phone'>{}</p>
+          <p className='name'>{this.state.name}</p>
+          <p className='address'>{this.state.address}</p>
+          <p className='phone'>{this.state.phone}</p>
         </article>
-        <button className='flame-icon' onClick={() => }>
+        <button className='flame-icon' >
           <img src='src/images/flame-black.png' />
         </button>
       </div>
