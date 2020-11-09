@@ -14,9 +14,9 @@ const FavPage = ({ favs }) => {
           <h1>Joints You Gotta Have</h1>
           <Favorite
           key={index}
-          name={}
-          address={}
-          phone={}
+          name={fav.name}
+          address={fav.address}
+          phone={fav.phone}
           />
         </section>
       )
