@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import FlameOrange from '../images/flame-orange.png';
 import './Favorite.css';
 

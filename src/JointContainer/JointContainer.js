@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Joint from '../Joint/Joint';
 import './JointContainer.css';
 

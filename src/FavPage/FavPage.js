@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Favorite from '../Favorite/Favorite';
 import './FavPage.css';
 
