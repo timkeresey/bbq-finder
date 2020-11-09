@@ -9,11 +9,15 @@ class Joint extends Component {
       name: name,
       address: address,
       phone: phone,
-      isFavorite: false
+      isFav: false
     }
   }
 
-
+toggleFav = () => {
+  this.setState(state => ({
+    isFav: !state.isFav
+  }));
+}
 
   render() {
     return (
@@ -24,7 +28,7 @@ class Joint extends Component {
           <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
         </article>
-        <button className='flame-icon' >
+        <button className='flame-icon' onClick={() => this.toggleFav()}>
           <img src={FlameBlack} alt='favorite'/>
         </button>
       </div>
