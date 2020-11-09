@@ -12,7 +12,8 @@ class App extends Component {
       city: '',
       stateUS: '',
       cityID: '',
-      joints: []
+      joints: [],
+      favs: []
     }
   }
 
