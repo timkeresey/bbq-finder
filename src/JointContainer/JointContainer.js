@@ -14,9 +14,9 @@ const JointContainer = ({ city, joints }) => {
           <h1>Joints in {}</h1>
           <Joint
           key={index}
-          name={}
-          address={}
-          phone={}
+          name={joint.name}
+          address={joint.address}
+          phone={joint.phone}
           />
         </section>
       )
