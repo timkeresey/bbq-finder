@@ -6,12 +6,18 @@ class SearchForm extends Component {
     super(props);
     this.state = {
       city: '',
-      stateUS: ''
+      stateUS: '',
+      cityID: ''
     }
   }
 
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
+  }
+
+  submitSearch = (e) => {
+    e.preventDefault();
+    this.props.searchCity(this.state.city, this.state.stateUS);
   }
 
   render() {
@@ -90,7 +96,7 @@ class SearchForm extends Component {
           <option value='PR' name='PR'/>
           <option value='VI' name='VI'/>
         </datalist>
-        <input type="submit" value="Search"/>
+        <input type="submit" value="Search" onClick={e => this.submitSearch(e)}/>
       </form>
     )
   }

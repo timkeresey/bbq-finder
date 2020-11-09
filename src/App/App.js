@@ -30,20 +30,20 @@ class App extends Component {
     });
   };
 
-  displayJoints = () => {
+  searchCity = (city, stateUS) => {
+    getCityID(city, stateUS)
+    .then(data => this.setState({
+      cityID: data.location_suggestions[0].id
+    }))
+  };
+  //display error message in catch
+componentDidMount() {
+  if(this.state.cityID) {
     getJoints(this.cityID)
       .then(data => this.mapJoints(data))
       .catch(error => console.log('getJoints error'))
   }
-
-  searchCity = () => {
-    getCityID(this.state.city, this.state.stateUS)
-      .then(data => this.setState({
-        cityID: String(data.location_suggestions[0].id)
-      }))
-      .then(data => this.displayJoints())
-      .catch(error => console.log('getCityID error'))
-  };
+}
 
   render() {
     return (
@@ -56,7 +56,9 @@ class App extends Component {
           <img />
         </header>
         <main>
-          <SearchForm />
+          <SearchForm searchCity={this.searchCity}
+
+          />
           <JointContainer joints={this.state.joints}/>
           <Route path='/favorites' render={() => <FavPage joints={this.state.favs} />} />
         </main>
