@@ -32,15 +32,16 @@ class App extends Component {
 
   displayJoints = () => {
     getJoints(this.cityID)
-      .then(data => mapJoints(data))
+      .then(data => this.mapJoints(data))
       .catch(error => console.log('getJoints error'))
   }
 
   searchCity = () => {
-    let id = String(data.location_suggestions[0].id);
     getCityID(this.state.city, this.state.stateUS)
-      .then(data => this.setState({ cityID: id }))
-      .then(data => displayJoints())
+      .then(data => this.setState({
+        cityID: String(data.location_suggestions[0].id)
+      }))
+      .then(data => this.displayJoints())
       .catch(error => console.log('getCityID error'))
   };
 
