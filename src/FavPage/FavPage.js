@@ -2,7 +2,7 @@ import React from 'react';
 import Favorite from '../Favorite/Favorite';
 import './FavPage.css';
 
-const FavPage = ({ favs }) => {
+const FavPage = ({ favs, unFav }) => {
   if(favs.length === 0){
     return (
       <h2 className='fav-msg'>Pick Some Joints You Gotta Have!</h2>
@@ -16,6 +16,7 @@ const FavPage = ({ favs }) => {
           name={fav.name}
           address={fav.address}
           phone={fav.phone}
+          unFav={unFav}
           />
         </div>
       )

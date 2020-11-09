@@ -20,8 +20,8 @@ class Favorite extends Component {
           <p className='name'>{this.state.name}</p>
           <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
-        </article> 
-        <button className='flame-icon' >
+        </article>
+        <button className='flame-icon' onClick={() => this.props.unFav(this.state.phone)} >
           <img src={FlameOrange} alt='favorites' />
         </button>
       </div>
