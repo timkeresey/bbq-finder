@@ -11,7 +11,7 @@ const JointContainer = ({ joints, addFav }) => {
   } else {
     return joints.map(joint => {
       return (
-        <section className='container'>
+        <section data-testid= 'joint-section' className='container'>
           <Joint
           key={joint.restaurant.id}
           addFav={addFav}
