@@ -11,7 +11,7 @@ class SearchForm extends Component {
     }
   }
 
-  resetInput = () => {
+  resetInputs = () => {
     this.setState({
       city: '',
       stateUS: '',

@@ -20,9 +20,7 @@ class App extends Component {
 
   setJoints = () => {
     getJoints(this.cityID)
-    .then(data => console.log(data))
-      .then(data => this.setState({ joints: data.restaurants }))
-      // .then(console.log(this.state))
+      .then(data => this.setState({ joints: [data.restaurants] }))
       .catch(error => console.log('getJoints error'))
 
       // let spot = {
