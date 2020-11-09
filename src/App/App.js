@@ -4,6 +4,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import JointContainer from '../JointContainer/JointContainer';
 import FavPage from '../FavPage/FavPage';
 import './App.css';
+import { getCityID, getJoints } from '../apiCalls.js';
 
 class App extends Component {
   constructor() {
