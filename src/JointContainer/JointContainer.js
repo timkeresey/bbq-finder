@@ -26,3 +26,8 @@ const JointContainer = ({ joints, addFav }) => {
 }
 
 export default JointContainer;
+
+JointContainer.propTypes = {
+  joints: PropTypes.array,
+  addFav: PropTypes.func
+}

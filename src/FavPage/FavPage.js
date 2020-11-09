@@ -33,3 +33,8 @@ const FavPage = ({ favs, unFav }) => {
 }
 
 export default FavPage;
+
+FavPage.propTypes = {
+  favs: PropTypes.array,
+  unfav: Proptypes.func
+}

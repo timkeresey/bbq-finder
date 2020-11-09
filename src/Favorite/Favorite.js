@@ -31,3 +31,9 @@ class Favorite extends Component {
 }
 
 export default Favorite;
+
+Favorite.propTypes = {
+  name: PropTypes.string,
+  address: PropTypes.string,
+  phone: PropTypes.string
+}

@@ -70,5 +70,3 @@ class App extends Component {
 }
 
 export default App;
-
-SearchForm.propTypes = {}

@@ -113,3 +113,7 @@ class SearchForm extends Component {
 }
 
 export default SearchForm;
+
+SearchForm.propTypes = {
+  searchCity: PropTypes.func
+}
