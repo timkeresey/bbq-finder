@@ -13,6 +13,7 @@ const JointContainer = ({ city, joints }) => {
         <section className='container'>
           <h1>Joints in {}</h1>
           <Joint
+          key={index}
           name={}
           address={}
           phone={}

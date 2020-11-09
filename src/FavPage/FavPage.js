@@ -13,6 +13,7 @@ const FavPage = ({ favs }) => {
         <section className='page'>
           <h1>Joints You Gotta Have</h1>
           <Favorite
+          key={index}
           name={}
           address={}
           phone={}
