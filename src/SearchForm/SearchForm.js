@@ -10,6 +10,10 @@ class SearchForm extends Component {
     }
   }
 
+  handelChange = (e) => {
+    this.setState({[event.target.name]: event.target.value});
+  }
+
   render() {
     return (
       <form className='search-form'>
@@ -17,15 +21,15 @@ class SearchForm extends Component {
         <input
         className='search'
         id='city'
-        value={}
-        onChange={}
+        value={this.state.city}
+        onChange={e => this.handelChange(e)}
         />
         <label htmlFor='stateUS'>State</label>
         <input
         className='search'
         id='stateUS'
         list='states'
-        onChange={}
+        onChange={e => this.handelChange(e)}
         />
         <datalist id='states'>
           <option value='AL' name='AL'/>

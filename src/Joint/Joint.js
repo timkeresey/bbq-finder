@@ -20,7 +20,7 @@ class Joint extends Component {
           <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
         </article>
-        <button className='flame-icon' onClick={() => }>
+        <button className='flame-icon' >
           <img src='src/images/flame-black.png' />
         </button>
       </div>
