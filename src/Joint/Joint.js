@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FlameBlack from '../images/flame-black.png';
 import './Joint.css';
 
 class Joint extends Component {
@@ -7,9 +8,12 @@ class Joint extends Component {
     this.state = {
       name: name,
       address: address,
-      phone: phone
+      phone: phone,
+      isFavorite: false
     }
   }
+
+
 
   render() {
     return (
@@ -21,7 +25,7 @@ class Joint extends Component {
           <p className='phone'>{this.state.phone}</p>
         </article>
         <button className='flame-icon' >
-          <img src='src/images/flame-black.png' />
+          <img src={FlameBlack} alt='favorite'/>
         </button>
       </div>
     )

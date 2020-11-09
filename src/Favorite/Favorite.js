@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FlameOrange from '../images/flame-orange.png';
 import './Favorite.css';
 
 class Favorite extends Component {
@@ -21,7 +22,7 @@ class Favorite extends Component {
           <p className='phone'>{this.state.phone}</p>
         </article>
         <button className='flame-icon' >
-          <img src='src/images/flame-orange.png' />
+          <img src='FlameOrange' alt='favorites' />
         </button>
       </div>
     )
