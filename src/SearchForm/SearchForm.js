@@ -27,8 +27,10 @@ class SearchForm extends Component {
         value={}
         onChange={}
         />
-        <input type="submit" value="Search"/> 
+        <input type="submit" value="Search"/>
       </form>
     )
   }
 }
+
+export default SearchForm;

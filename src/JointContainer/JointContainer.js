@@ -22,3 +22,5 @@ const JointContainer = ({ city, joints }) => {
     })
   }
 }
+
+export default JointContainer;

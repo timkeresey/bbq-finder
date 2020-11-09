@@ -23,3 +23,5 @@ const FavPage = ({ favs }) => {
   }
 
 }
+
+export default FavPage;

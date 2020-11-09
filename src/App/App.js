@@ -34,9 +34,11 @@ class App extends Component {
         <main>
           <SearchForm />
           <JointContainer joints={this.state.joints}/>
-          <Route path='/favorites' render={() => <FavPage joints={this.state.favs}}
+          <Route path='/favorites' render={() => <FavPage joints={this.state.favs} />} />
         </main>
       </body>
     )
   }
 }
+
+export default App;
