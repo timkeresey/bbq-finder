@@ -12,7 +12,8 @@ class App extends Component {
       city: '',
       stateUS: '',
       cityID: '',
-      joints: []
+      joints: [],
+      favs: []
     }
   }
 
@@ -26,14 +27,14 @@ class App extends Component {
         <header>
           <h1>BBQ</h1>
           <nav className='link'>
-            <Link to='/favorites' className='fav-link'>Gotta Have 'Em</Link>
+            <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
           </nav>
           <img />
         </header>
         <main>
           <SearchForm />
           <JointContainer joints={this.state.joints}/>
-          <Route path='/favorites' render={() => <FavPage joints={this.state.joints}}
+          <Route path='/favorites' render={() => <FavPage joints={this.state.favs}}
         </main>
       </body>
     )
