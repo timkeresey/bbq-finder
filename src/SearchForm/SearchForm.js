@@ -11,6 +11,14 @@ class SearchForm extends Component {
     }
   }
 
+  resetInput = () => {
+    this.setState({
+      city: '',
+      stateUS: '',
+      cityID: ''
+    })
+  }
+
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
   }
@@ -18,6 +26,7 @@ class SearchForm extends Component {
   submitSearch = (e) => {
     e.preventDefault();
     this.props.searchCity(this.state.city, this.state.stateUS);
+    this.resetInputs();
   }
 
   render() {

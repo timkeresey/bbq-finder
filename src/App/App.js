@@ -18,16 +18,20 @@ class App extends Component {
     }
   }
 
-  mapJoints = (data) => {
-    data.restaurants.map(place => {
-      let spot = {
-        id: place.restaurant.id,
-        name: place.restaurant.name,
-        address: `${place.restaurant.location.address}, ${place.restaurant.location.city}`,
-        phone: place.restaurant.phone_numbers
-      };
-      this.setState({ joints: [...this.state.joints, spot] })
-    });
+  setJoints = () => {
+    getJoints(this.cityID)
+    .then(data => console.log(data))
+      .then(data => this.setState({ joints: data.restaurants }))
+      // .then(console.log(this.state))
+      .catch(error => console.log('getJoints error'))
+
+      // let spot = {
+      //   id: place.restaurant.id,
+      //   name: place.restaurant.name,
+      //   address: `${place.restaurant.location.address}, ${place.restaurant.location.city}`,
+      //   phone: place.restaurant.phone_numbers
+      // };
+
   };
 
   searchCity = (city, stateUS) => {
@@ -35,12 +39,13 @@ class App extends Component {
     .then(data => this.setState({
       cityID: data.location_suggestions[0].id
     }))
+    .then(this.setJoints())
   };
   //display error message in catch
 componentDidMount() {
   if(this.state.cityID) {
     getJoints(this.cityID)
-      .then(data => this.mapJoints(data))
+      .then(data => this.setState({ joints: data.restaurant }))
       .catch(error => console.log('getJoints error'))
   }
 }
@@ -53,7 +58,7 @@ componentDidMount() {
           <nav className='link'>
             <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
           </nav>
-          <img />
+
         </header>
         <main>
           <SearchForm searchCity={this.searchCity}

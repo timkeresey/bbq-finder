@@ -3,7 +3,7 @@ import Joint from '../Joint/Joint';
 import './JointContainer.css';
 
 const JointContainer = ({ city, joints }) => {
-  if (!joints.length > 0) {
+  if (joints.length === 0) {
     return (
       <h2 className='search-msg'>Where Are You Looking For BBQ?</h2>
     )
