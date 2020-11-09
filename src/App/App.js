@@ -20,8 +20,8 @@ class App extends Component {
 
   setJoints = () => {
     getJoints(this.cityID)
-      .then(data => this.setState({ joints: [data.restaurants] }))
-      .catch(error => console.log('getJoints error'))
+      .then(data => this.setState({ joints: data.restaurants }))
+      .catch(error => error => this.setState({error: error.message}))
 
       // let spot = {
       //   id: place.restaurant.id,
@@ -40,13 +40,6 @@ class App extends Component {
     .then(this.setJoints())
   };
   //display error message in catch
-componentDidMount() {
-  if(this.state.cityID) {
-    getJoints(this.cityID)
-      .then(data => this.setState({ joints: data.restaurant }))
-      .catch(error => console.log('getJoints error'))
-  }
-}
 
   render() {
     return (

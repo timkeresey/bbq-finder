@@ -7,6 +7,7 @@ class Joint extends Component {
     this.state = {
       name: '',
       address: '',
+      city: '',
       phone: ''
     }
   }
@@ -17,7 +18,7 @@ class Joint extends Component {
         <img />
         <article className='info'>
           <p className='name'>{this.state.name}</p>
-          <p className='address'>{this.state.address}</p>
+          <p className='address'>{this.state.address}, {this.state.city}</p>
           <p className='phone'>{this.state.phone}</p>
         </article>
         <button className='flame-icon' >
