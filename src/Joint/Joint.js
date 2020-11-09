@@ -33,7 +33,7 @@ class Joint extends Component {
   render() {
     return (
       <div className='card'>
-        <img />
+        <img alt='rib'/>
         <article className='info'>
           <p className='name'>{this.state.name}</p>
           <p className='address'>{this.state.address}</p>
@@ -42,7 +42,7 @@ class Joint extends Component {
         <button className='flame-icon' onClick={() => this.toggleFav()}>
         {!this.state.isFav
           ? <img src={FlameBlack} alt='favorite'/>
-          : <img src={FlameOrange} alt='favorite'/>}
+          : <img src={FlameOrange} alt='unfavorite'/>}
         </button>
       </div>
     )
@@ -54,5 +54,6 @@ export default Joint;
 Joint.propTypes = {
   name: PropTypes.string,
   address: PropTypes.string,
-  phone: PropTypes.string
+  phone: PropTypes.string,
+  addFav: PropTypes.func
 }
