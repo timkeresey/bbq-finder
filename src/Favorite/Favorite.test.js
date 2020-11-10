@@ -26,5 +26,23 @@ describe('Favorite', () => {
     expect(screen.getByAltText('rib')).toBeInTheDocument();
     expect(screen.getByAltText('unfavorite')).toBeInTheDocument();
   });
-  //clicking button should fire unfav method
+
+  it('should fire the unfav method once when the favorite button is pressed', () => {
+    const dumUnFav = jest.fn();
+    const dumName = 'BBQ Town'
+    const dumAddress = '123 N. South Street, Denver, CO';
+    const dumPhone = '555-555-5555';
+
+    render(
+      <Favorite
+      name={dumName}
+      address={dumAddress}
+      phone={dumPhone}
+      unFav={dumUnFav}
+      />
+    );
+
+    userEvent.click(screen.getByAltText('unfavorite'));
+    expect(dumUnFav).toHaveBeenCalledTimes(1);
+  });
 })
