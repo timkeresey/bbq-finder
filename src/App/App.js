@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 import SearchForm from '../SearchForm/SearchForm';
 import JointContainer from '../JointContainer/JointContainer';
@@ -25,7 +26,6 @@ class App extends Component {
   };
 
   searchCity = (city, stateUS) => {
-    let cityID
     getCityID(city, stateUS)
     .then(data => this.setJoints(data.location_suggestions[0].id))
     .catch(error => error => this.setState({error: error.message}))
@@ -59,8 +59,8 @@ class App extends Component {
             joints={this.state.joints}/>
           </main>
         </Route>
-        <Route path='/favorites' render={() => <
-          FavPage
+        <Route path='/favorites' render={() =>
+          <FavPage
           favs={this.state.favs}
           unFav={this.unFav}
           />} />

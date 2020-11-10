@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import FlameBlack from '../images/flame-black.png';
 import FlameOrange from '../images/flame-orange.png';
 
 import './Joint.css';
 
 class Joint extends Component {
-  constructor({ name, address, phone }) {
-    super({ name, address, phone });
+  constructor(props) {
+    super(props);
     this.state = {
-      name: name,
-      address: address,
-      phone: phone,
+      name: props.name,
+      address: props.address,
+      phone: props.phone,
       isFav: false
     }
   }
@@ -32,7 +33,7 @@ class Joint extends Component {
   render() {
     return (
       <div className='card'>
-        <img />
+        <img alt='rib'/>
         <article className='info'>
           <p className='name'>{this.state.name}</p>
           <p className='address'>{this.state.address}</p>
@@ -41,7 +42,7 @@ class Joint extends Component {
         <button className='flame-icon' onClick={() => this.toggleFav()}>
         {!this.state.isFav
           ? <img src={FlameBlack} alt='favorite'/>
-          : <img src={FlameOrange} alt='favorite'/>}
+          : <img src={FlameOrange} alt='unfavorite'/>}
         </button>
       </div>
     )
@@ -49,4 +50,10 @@ class Joint extends Component {
 }
 
 export default Joint;
-//conditional render the icon img in method return
+
+Joint.propTypes = {
+  name: PropTypes.string,
+  address: PropTypes.string,
+  phone: PropTypes.string,
+  addFav: PropTypes.func
+}

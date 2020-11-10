@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import FlameOrange from '../images/flame-orange.png';
 import './Favorite.css';
 
 class Favorite extends Component {
-  constructor({ name, address, phone }) {
-    super({ name, address, phone });
+  constructor(props) {
+    super(props);
     this.state = {
-      name: name,
-      address: address,
-      phone: phone
+      name: props.name,
+      address: props.address,
+      phone: props.phone
     }
   }
 
   render() {
     return (
       <div className='fav-card'>
-        <img />
+        <img alt='rib'/>
         <article className='info'>
           <p className='name'>{this.state.name}</p>
           <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
         </article>
         <button className='flame-icon' onClick={() => this.props.unFav(this.state.phone)} >
-          <img src={FlameOrange} alt='favorites' />
+          <img src={FlameOrange} alt='unfavorite' />
         </button>
       </div>
     )
@@ -30,3 +31,10 @@ class Favorite extends Component {
 }
 
 export default Favorite;
+
+Favorite.propTypes = {
+  unFav: PropTypes.func,
+  name: PropTypes.string,
+  address: PropTypes.string,
+  phone: PropTypes.string
+}

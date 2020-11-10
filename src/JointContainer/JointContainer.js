@@ -1,18 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Joint from '../Joint/Joint';
 import './JointContainer.css';
 
 const JointContainer = ({ joints, addFav }) => {
   if (joints.length === 0) {
     return (
-      <h2 className='search-msg'>Where Are You Looking For BBQ?</h2>
+      <h2 className='search-msg'>Where Do You Wanna Get BBQ?</h2>
     )
   } else {
     return joints.map(joint => {
       return (
-        <section className='container'>
+        <section key={joint.restaurant.id} data-testid= 'joint-section' className='container'>
           <Joint
-          key={joint.restaurant.id}
           addFav={addFav}
           name={joint.restaurant.name}
           address={joint.restaurant.location.address}
@@ -25,3 +25,8 @@ const JointContainer = ({ joints, addFav }) => {
 }
 
 export default JointContainer;
+
+JointContainer.propTypes = {
+  joints: PropTypes.array,
+  addFav: PropTypes.func
+}
