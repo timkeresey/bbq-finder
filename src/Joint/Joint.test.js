@@ -26,6 +26,24 @@ describe('Joint', () => {
     expect(screen.getByAltText('rib')).toBeInTheDocument();
     expect(screen.getByAltText('favorite')).toBeInTheDocument();
   });
-  //button should change color when pressed?
-  //clicking button should fire addfav method
+
+  it('should fire the toggleFav method once when favorite button is clicked', () => {
+
+    const dumAddFav = jest.fn();
+    const dumName = 'BBQ Town'
+    const dumAddress = '123 N. South Street, Denver, CO';
+    const dumPhone = '555-555-5555';
+
+    render(
+      <Joint
+      addFav={dumAddFav}
+      name={dumName}
+      address={dumAddress}
+      phone={dumPhone}
+      />
+    );
+
+    userEvent.click(screen.getByAltText('favorite'));
+    expect(dumAddFav).toHaveBeenCalledTimes(1);
+  });
 })

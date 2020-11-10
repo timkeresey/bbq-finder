@@ -44,7 +44,7 @@ class App extends Component {
 
   render() {
     return (
-      <body>
+      <main>
         <Route exact path='/'>
           <header>
             <h1>BBQ</h1>
@@ -52,19 +52,19 @@ class App extends Component {
               <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
             </nav>
           </header>
-          <main>
+          <section>
             <SearchForm searchCity={this.searchCity} />
             <JointContainer
             addFav={this.addFav}
             joints={this.state.joints}/>
-          </main>
+          </section>
         </Route>
         <Route path='/favorites' render={() =>
           <FavPage
           favs={this.state.favs}
           unFav={this.unFav}
           />} />
-      </body>
+      </main>
     )
   }
 }

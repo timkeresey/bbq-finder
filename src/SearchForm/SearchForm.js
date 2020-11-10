@@ -35,6 +35,7 @@ class SearchForm extends Component {
       <form className='search-form'>
         <label htmlFor='city-search'>City</label>
         <input
+        data-testid='city-input'
         id='city-search'
         name='city'
         type='text'
@@ -43,6 +44,7 @@ class SearchForm extends Component {
         />
         <label htmlFor='stateUS'>State</label>
         <input
+        data-testid='state-input'
         name='stateUS'
         id='stateUS'
         list='states'
