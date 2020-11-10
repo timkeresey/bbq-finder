@@ -4,12 +4,12 @@ import FlameOrange from '../images/flame-orange.png';
 import './Favorite.css';
 
 class Favorite extends Component {
-  constructor({ name, address, phone }) {
-    super({ name, address, phone });
+  constructor(props) {
+    super(props);
     this.state = {
-      name: name,
-      address: address,
-      phone: phone
+      name: props.name,
+      address: props.address,
+      phone: props.phone
     }
   }
 
@@ -33,6 +33,7 @@ class Favorite extends Component {
 export default Favorite;
 
 Favorite.propTypes = {
+  unFav: PropTypes.func,
   name: PropTypes.string,
   address: PropTypes.string,
   phone: PropTypes.string
