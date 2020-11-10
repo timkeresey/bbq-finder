@@ -44,16 +44,16 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <main className='main-section'>
         <Route exact path='/'>
-          <header>
-            <h1>BBQ</h1>
-            <nav className='link'>
-              <Link to='/favorites' className='fav-link'>gotta have 'em</Link>
-            </nav>
+          <header >
+            <h1 className='title'>Find Some BBQ</h1>
           </header>
           <section>
             <SearchForm searchCity={this.searchCity} />
+            <nav className='link'>
+              <Link to='/favorites' className='fav-link'>Spots to get to</Link>
+            </nav>
             <JointContainer
             addFav={this.addFav}
             joints={this.state.joints}/>
