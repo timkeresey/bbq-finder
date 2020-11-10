@@ -16,14 +16,14 @@ class Favorite extends Component {
   render() {
     return (
       <div className='fav-card'>
-        <img />
+        <img alt='rib'/>
         <article className='info'>
           <p className='name'>{this.state.name}</p>
           <p className='address'>{this.state.address}</p>
           <p className='phone'>{this.state.phone}</p>
         </article>
         <button className='flame-icon' onClick={() => this.props.unFav(this.state.phone)} >
-          <img src={FlameOrange} alt='favorites' />
+          <img src={FlameOrange} alt='unfavorite' />
         </button>
       </div>
     )

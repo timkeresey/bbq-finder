@@ -6,7 +6,6 @@ import Joint from './Joint.js';
 
 describe('Joint', () => {
   it('should render a joint card', () => {
-    const dumKey = '1';
     const dumAddFav = jest.fn();
     const dumName = 'BBQ Town'
     const dumAddress = '123 N. South Street, Denver, CO';
@@ -14,7 +13,6 @@ describe('Joint', () => {
 
     render(
       <Joint
-      key={dumKey}
       addFav={dumAddFav}
       name={dumName}
       address={dumAddress}
