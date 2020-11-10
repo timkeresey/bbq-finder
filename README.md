@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# BBQ Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is this?
 
-## Available Scripts
+BBQ Finder is a Mod 3 solo project for the Front-End Engineering program at the Turing School of Software and Design. The purpose of the project was to demonstrate a good grasp of how to create an app with React framework using Router, testing with Jest, and async JS.
 
-In the project directory, you can run:
+The audience that this app is for is travelers who love BBQ. Using th [Zomato.com](https://developers.zomato.com/documentation#!/common/cuisines) public API, a user can search for BBQ restaurants across thousands of cities in the US. If they find one they would like to go to, they can favorite and save it for later.
 
-### `npm start`
+## Who was involved?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Tim Keresey](https://github.com/timkeresey)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+- Clone down the repo
+- Run `npm install`
+- Run `npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies used
 
-### `npm run build`
+- [React](https://reactjs.org/)
+  - JSX
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [Jest](https://jestjs.io/)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Accomplishments
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I'm very happy with the idea for this app, and believe the execution went well. All MVP functionality is met, and it is easy to use. I think that it was a good project for solidifying some areas in React that I felt less sure about my ability with. I think this is a very good starting point for an app that could be quite useful.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Challenges
 
-### `npm run eject`
+Asynchronous testing is the most difficult aspect of React, and the only area that I did not execute. Time became an issue and I had to abondon trying to get testing of my fetch calls to pass in order to complete styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Future Iterations
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In future iterations, I'd like to expand the information available per restuarant, and give each one its own information page. The functionality of the favoriting and unfavoriting does not persisit across rerenders, and I'd like to refactor to fix that issue.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## In Action
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Search View
+![search view](/src/images/search-view.png)
 
-## Learn More
+### BBQ View
+![bbq view](/src/images/bbq-view.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Favorites View
+![favorite view](/src/images/fav-view.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### In Action
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![in action](https://media.giphy.com/media/OnTSxGky6PNWSM2NIN/giphy.gif)
