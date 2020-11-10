@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FlameOrange from '../images/flame-orange.png';
+import Rib from '../images/rib.png';
 import './Favorite.css';
 
 class Favorite extends Component {
@@ -16,7 +17,7 @@ class Favorite extends Component {
   render() {
     return (
       <div className='fav-card'>
-        <img alt='rib'/>
+        <img src={Rib} alt='rib'/>
         <article className='info'>
           <p className='name'>{this.state.name}</p>
           <p className='address'>{this.state.address}</p>

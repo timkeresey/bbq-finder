@@ -1,0 +1,17 @@
+.search-form {
+  font-family: 'Caveat', cursive;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  height: 36px;
+}
+
+.search-form input {
+  margin-right: 35px;
+}
+
+.search-form label {
+  margin-right: 15px;
+  align-items: center;
+}

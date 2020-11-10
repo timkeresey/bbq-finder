@@ -1,0 +1,12 @@
+.container {
+  font-family: 'Caveat', cursive;
+  display: grid;
+  place-items: center;
+  margin-top: 15px;
+}
+
+.search-msg {
+  margin-top: 100px;
+  font-family: 'Caveat', cursive;
+  font-size: 3em;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FlameBlack from '../images/flame-black.png';
 import FlameOrange from '../images/flame-orange.png';
+import Rib from '../images/rib.png';
 
 import './Joint.css';
 
@@ -33,7 +34,7 @@ class Joint extends Component {
   render() {
     return (
       <div className='card'>
-        <img alt='rib'/>
+        <img src={Rib} alt='rib'/>
         <article className='info'>
           <p className='name'>{this.state.name}</p>
           <p className='address'>{this.state.address}</p>
