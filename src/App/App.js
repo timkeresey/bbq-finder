@@ -47,7 +47,7 @@ class App extends Component {
       <main className='main-section'>
         <Route exact path='/'>
           <header >
-            <h1 className='title'>Where's The BBQ?</h1>
+            <h1 className='title'>Find Some BBQ</h1>
           </header>
           <section>
             <SearchForm searchCity={this.searchCity} />

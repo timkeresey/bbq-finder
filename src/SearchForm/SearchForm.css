@@ -14,4 +14,11 @@
 .search-form label {
   margin-right: 15px;
   align-items: center;
+  font-size: 2em;
+}
+
+.button {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2em;
+  background-color: #f2ce4c;
 }

@@ -108,7 +108,7 @@ class SearchForm extends Component {
           <option value='PR' name='PR'/>
           <option value='VI' name='VI'/>
         </datalist>
-        <input type="submit" value="Search" onClick={e => this.submitSearch(e)}/>
+        <input className='button' type="submit" value="Search" onClick={e => this.submitSearch(e)}/>
       </form>
     )
   }
