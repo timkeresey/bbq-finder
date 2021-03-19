@@ -19,7 +19,7 @@ const App = () => {
   //   }
   // }
 
-  const [joints, setJoints] = useState([]);
+  let [joints, setJoints] = useState([]);
   const [city, setCity] = useState('');
   const [stateUS, setStateUS] = useState('');
   const [cityID, setCityID] = useState('');
@@ -55,7 +55,7 @@ const App = () => {
             <h1 className='title'>Find Some BBQ</h1>
           </header>
           <section>
-            <SearchForm searchCity={console.log(searchCity)} />
+            <SearchForm searchCity={searchCity} />
             <nav className='link'>
               <Link to='/favorites' className='fav-link'>Favorite Spots</Link>
             </nav>
