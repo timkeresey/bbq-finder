@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import FlameBlack from '../images/flame-black.png';
 import FlameOrange from '../images/flame-orange.png';
@@ -6,48 +6,50 @@ import Rib from '../images/rib.png';
 
 import './Joint.css';
 
-class Joint extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: props.name,
-      address: props.address,
-      phone: props.phone,
-      isFav: false
-    }
-  }
+const Joint = ({name, address, phone}) => {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     name: props.name,
+  //     address: props.address,
+  //     phone: props.phone,
+  //     isFav: false
+  //   }
+  // }
 
-  toggleFav = () => {
-    if(!this.state.isFav) {
-      this.passFav();
-    };
-    this.setState(state => ({
-      isFav: !state.isFav
-    }));
-  }
+  const [isFav, setIsFav] = useState(false);
 
-  passFav = () => {
-    const newFav = this.state;
-    this.props.addFav(newFav);
-  }
+  // toggleFav = () => {
+  //   if(!this.state.isFav) {
+  //     this.passFav();
+  //   };
+  //   this.setState(state => ({
+  //     isFav: !state.isFav
+  //   }));
+  // }
 
-  render() {
-    return (
-      <div className='card'>
-        <img src={Rib} alt='rib'/>
-        <article className='info'>
-          <p className='name'>{this.state.name}</p>
-          <p className='address'>{this.state.address}</p>
-          <p className='phone'>{this.state.phone}</p>
-        </article>
-        <button className='flame-icon' onClick={() => this.toggleFav()}>
-        {!this.state.isFav
-          ? <img src={FlameBlack} alt='favorite'/>
-          : <img src={FlameOrange} alt='unfavorite'/>}
-        </button>
-      </div>
-    )
-  }
+  // passFav = () => {
+  //   const newFav = this.state;
+  //   this.props.addFav(newFav);
+  // }
+  
+
+  return (
+    <div className='card'>
+      <img src={Rib} alt='rib'/>
+      <article className='info'>
+        <p className='name'>{name}</p>
+        <p className='address'>{address}</p>
+        <p className='phone'>{phone}</p>
+      </article>
+      <button className='flame-icon' >
+      {isFav === false
+        ? <img src={FlameBlack} alt='favorite'/>
+        : <img src={FlameOrange} alt='unfavorite'/>}
+      </button>
+    </div>
+  )
+  
 }
 
 export default Joint;

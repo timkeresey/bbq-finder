@@ -4,6 +4,7 @@ import FlameOrange from '../images/flame-orange.png';
 import Rib from '../images/rib.png';
 import './Favorite.css';
 
+// This whole component can be removed and FavPage can display just display joints in whish isFavorite is true.
 const Favorite = ({name, address, phone}) => {
   // constructor(props) {
   //   super(props);
