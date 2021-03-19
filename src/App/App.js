@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 import SearchForm from '../SearchForm/SearchForm';
@@ -7,42 +7,47 @@ import FavPage from '../FavPage/FavPage';
 import './App.css';
 import { getCityID, getJoints } from '../apiCalls.js';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      city: '',
-      stateUS: '',
-      cityID: '',
-      joints: [],
-      favs: []
-    }
-  }
+const App = () => {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     city: '',
+  //     stateUS: '',
+  //     cityID: '',
+  //     joints: [],
+  //     favs: []
+  //   }
+  // }
 
-  setJoints = (cityID) => {
+  let [joints, setJoints] = useState([]);
+  const [city, setCity] = useState('');
+  const [stateUS, setStateUS] = useState('');
+  const [cityID, setCityID] = useState('');
+
+  const displayJoints = (cityID) => {
     getJoints(cityID)
-      .then(data => this.setState({ joints: data.restaurants }))
-      .catch(error => error => this.setState({error: error.message}))
+      .then(data => setJoints(joints = data.restaurants))
+      .catch(error => console.log(error))
   };
 
-  searchCity = (city, stateUS) => {
+  const searchCity = (city, stateUS) => {
     getCityID(city, stateUS)
-    .then(data => this.setJoints(data.location_suggestions[0].id))
-    .catch(error => error => this.setState({error: error.message}))
+    .then(data => displayJoints(data.location_suggestions[0].id))
+    .catch(error => console.log(error))
   };
 
-  addFav = (newFav) => {
-    this.setState({ favs: [...this.state.favs, newFav] });
-  }
+  // const addFav = (newFav) => {
+  //   this.setState({ favs: [...this.state.favs, newFav] });
+  // }
 
-  unFav = (phone) => {
-    const favUpdate = this.state.favs.filter(fav => {
-      return fav.phone !== phone
-    });
-    this.setState({ favs: favUpdate });
-  }
+  // const unFav = (phone) => {
+  //   const favUpdate = this.state.favs.filter(fav => {
+  //     return fav.phone !== phone
+  //   });
+  //   this.setState({ favs: favUpdate });
+  // }
 
-  render() {
+ 
     return (
       <main className='main-section'>
         <Route exact path='/'>
@@ -50,23 +55,23 @@ class App extends Component {
             <h1 className='title'>Find Some BBQ</h1>
           </header>
           <section>
-            <SearchForm searchCity={this.searchCity} />
+            <SearchForm searchCity={searchCity} />
             <nav className='link'>
-              <Link to='/favorites' className='fav-link'>Spots to get to</Link>
+              <Link to='/favorites' className='fav-link'>Favorite Spots</Link>
             </nav>
             <JointContainer
-            addFav={this.addFav}
-            joints={this.state.joints}/>
+            
+            joints={joints}/>
           </section>
         </Route>
         <Route path='/favorites' render={() =>
           <FavPage
-          favs={this.state.favs}
-          unFav={this.unFav}
+          
+          
           />} />
       </main>
     )
-  }
+  
 }
 
 export default App;

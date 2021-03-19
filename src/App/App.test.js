@@ -39,6 +39,6 @@ describe('App', () => {
     ])
 
     const restaurant = await waitFor(() => screen.getByText('BBQ Place'));
-    expect(rextaurant).toBeInTheDocument();
+    expect(restaurant).toBeInTheDocument();
   })
 })
