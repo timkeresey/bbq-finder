@@ -20,9 +20,9 @@ const App = () => {
   // }
 
   let [joints, setJoints] = useState([]);
-  const [city, setCity] = useState('');
-  const [stateUS, setStateUS] = useState('');
-  const [cityID, setCityID] = useState('');
+  // const [city, setCity] = useState('');
+  // const [stateUS, setStateUS] = useState('');
+  // const [cityID, setCityID] = useState('');
 
   const displayJoints = (cityID) => {
     getJoints(cityID)
@@ -47,7 +47,7 @@ const App = () => {
   //   this.setState({ favs: favUpdate });
   // }
 
- 
+
     return (
       <main className='main-section'>
         <Route exact path='/'>
@@ -60,7 +60,7 @@ const App = () => {
               <Link to='/favorites' className='fav-link'>Favorite Spots</Link>
             </nav>
             <JointContainer
-            
+
             joints={joints}/>
           </section>
         </Route>

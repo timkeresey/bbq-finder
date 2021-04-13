@@ -17,6 +17,7 @@ const JointContainer = ({ joints, addFav }) => {
           name={joint.restaurant.name}
           address={joint.restaurant.location.address}
           phone={joint.restaurant.phone_numbers}
+          pic={joint.restaurant.featured_image}
           />
         </section>
       )
