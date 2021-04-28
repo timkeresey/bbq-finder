@@ -56,22 +56,19 @@ const App = () => {
           </header>
           <section>
             <SearchForm searchCity={searchCity} />
-            <nav className='link'>
-              <Link to='/favorites' className='fav-link'>Favorite Spots</Link>
-            </nav>
-            <JointContainer
-
-            joints={joints}/>
+            
+            <JointContainer joints={joints}/>
           </section>
         </Route>
-        <Route path='/favorites' render={() =>
-          <FavPage
-          
-          
-          />} />
+       
       </main>
     )
   
 }
 
 export default App;
+
+// <Route path='/favorites' render={() => <FavPage />} />
+// <nav className='link'>
+//    <Link to='/favorites' className='fav-link'>Favorite Spots</Link>
+// </nav>

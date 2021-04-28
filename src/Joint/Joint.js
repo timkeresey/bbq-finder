@@ -6,7 +6,7 @@ import Rib from '../images/rib.png';
 
 import './Joint.css';
 
-const Joint = ({name, address, phone, pic}) => {
+const Joint = ({addFav, name, address, phone, pic}) => {
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -22,15 +22,20 @@ const Joint = ({name, address, phone, pic}) => {
   const toggleFav = () => {
     if (isFav === false) {
       setIsFav(isFav = true);
+      passFav();
     } else {
       setIsFav(isFav = false);
     }
   }
 
-  // passFav = () => {
-  //   const newFav = this.state;
-  //   this.props.addFav(newFav);
-  // }
+  let passFav = () => {
+    const newFav = {
+      name: name,
+      address: address,
+      phone: phone
+    };
+    addFav(newFav);
+  }
 
   return (
     <div className='card'>
