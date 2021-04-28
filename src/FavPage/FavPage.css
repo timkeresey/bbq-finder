@@ -1,5 +1,5 @@
 .page {
-  font-family: 'Caveat', cursive;
+  font-family: 'Raleway', sans-serif;
   display: grid;
   place-items: center;
   margin-top: 15px;
@@ -7,6 +7,6 @@
 
 .msg {
   margin-top: 100px;
-  font-family: 'Caveat', cursive;
+  font-family: 'Raleway', sans-serif;
   font-size: 3em;
 }

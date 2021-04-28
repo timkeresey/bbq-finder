@@ -1,5 +1,5 @@
 .search-form {
-  font-family: 'Caveat', cursive;
+  font-family: 'Raleway', sans-serif;
   display: flex;
   justify-content: center;
   padding-top: 50px;
@@ -18,7 +18,11 @@
 }
 
 .button {
-  font-family: 'Caveat', cursive;
+  font-family: 'Raleway', sans-serif;
   font-size: 1.2em;
   background-color: #f2ce4c;
 }
+/*
+font-family: 'Oswald', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Rye', cursive; */

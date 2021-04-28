@@ -6,7 +6,7 @@ import Rib from '../images/rib.png';
 
 import './Joint.css';
 
-const Joint = ({name, address, phone}) => {
+const Joint = ({addFav, name, address, phone, pic}) => {
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -17,39 +17,48 @@ const Joint = ({name, address, phone}) => {
   //   }
   // }
 
-  const [isFav, setIsFav] = useState(false);
+  let [isFav, setIsFav] = useState(false);
 
-  // toggleFav = () => {
-  //   if(!this.state.isFav) {
-  //     this.passFav();
-  //   };
-  //   this.setState(state => ({
-  //     isFav: !state.isFav
-  //   }));
-  // }
+  const toggleFav = () => {
+    if (isFav === false) {
+      setIsFav(isFav = true);
+      passFav();
+    } else {
+      setIsFav(isFav = false);
+    }
+  }
 
-  // passFav = () => {
-  //   const newFav = this.state;
-  //   this.props.addFav(newFav);
-  // }
-  
+  let passFav = () => {
+    const newFav = {
+      name: name,
+      address: address,
+      phone: phone
+    };
+    addFav(newFav);
+  }
 
   return (
     <div className='card'>
-      <img src={Rib} alt='rib'/>
+      {
+      pic ?
+      <img src={pic} alt='restaurant'/> :
+      <img src={Rib} alt='rib' />
+      }
       <article className='info'>
         <p className='name'>{name}</p>
         <p className='address'>{address}</p>
         <p className='phone'>{phone}</p>
       </article>
-      <button className='flame-icon' >
-      {isFav === false
+      <button className='flame-icon' onClick={() => toggleFav()} >
+      {
+      isFav === false
         ? <img src={FlameBlack} alt='favorite'/>
-        : <img src={FlameOrange} alt='unfavorite'/>}
+        : <img src={FlameOrange} alt='unfavorite'/>
+      }
       </button>
     </div>
   )
-  
+
 }
 
 export default Joint;

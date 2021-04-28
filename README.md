@@ -4,7 +4,7 @@
 
 BBQ Finder is a Mod 3 solo project for the Front-End Engineering program at the Turing School of Software and Design. The purpose of the project was to demonstrate a good grasp of how to create an app with React framework using Router, testing with Jest, and async JS.
 
-The audience that this app is for is travelers who love BBQ. Using th [Zomato.com](https://developers.zomato.com/documentation#!/common/cuisines) public API, a user can search for BBQ restaurants across thousands of cities in the US. If they find one they would like to go to, they can favorite and save it for later.
+The audience that this app is for is travelers who love BBQ. Using the [Zomato.com](https://developers.zomato.com/documentation#!/common/cuisines) public API, a user can search for BBQ restaurants across thousands of cities in the US. If they find one they would like to go to, they can favorite and save it for later.
 
 ## Who was involved?
 

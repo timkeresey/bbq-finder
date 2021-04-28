@@ -16,6 +16,7 @@ const Favorite = ({name, address, phone}) => {
   // }
 
   
+
   return (
     <div className='fav-card'>
       <img src={Rib} alt='rib'/>
@@ -24,12 +25,11 @@ const Favorite = ({name, address, phone}) => {
         <p className='address'>{address}</p>
         <p className='phone'>{phone}</p>
       </article>
-      <button className='flame-icon' onClick={() => this.props.unFav(this.state.phone)} >
+      <button className='flame-icon'  >
         <img src={FlameOrange} alt='unfavorite' />
       </button>
     </div>
   )
-  
 }
 
 export default Favorite;

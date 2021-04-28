@@ -1,5 +1,5 @@
 .fav-card {
-  ont-family: 'Caveat', cursive;
+  font-family: 'Raleway', sans-serif;
   background-color: rgb(121, 33, 21);
   margin-bottom: 20px;
   width: clamp(45ch, 80%, 100ch);
