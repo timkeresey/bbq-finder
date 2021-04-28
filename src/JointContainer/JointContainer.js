@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Joint from '../Joint/Joint';
-import './JointContainer.css';
+import './JointContainer.scss';
 
 const JointContainer = ({ joints, addFav }) => {
   if (joints.length === 0) {

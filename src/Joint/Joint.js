@@ -4,7 +4,7 @@ import FlameBlack from '../images/flame-black.png';
 import FlameOrange from '../images/flame-orange.png';
 import Rib from '../images/rib.png';
 
-import './Joint.css';
+import './Joint.scss';
 
 const Joint = ({addFav, name, address, phone, pic}) => {
   // constructor(props) {

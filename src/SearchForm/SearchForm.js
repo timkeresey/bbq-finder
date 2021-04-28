@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import './SearchForm.css';
+import './SearchForm.scss';
 
 // Maybe find a simple api with all the state abbreviations, or remove the state input.
 

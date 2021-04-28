@@ -4,7 +4,7 @@ import { Route, Link } from 'react-router-dom';
 import SearchForm from '../SearchForm/SearchForm';
 import JointContainer from '../JointContainer/JointContainer';
 import FavPage from '../FavPage/FavPage';
-import './App.css';
+import './App.scss';
 import { getCityID, getJoints } from '../apiCalls.js';
 
 const App = () => {
