@@ -1,58 +1,6 @@
-// COLOR VARIABLES
-$color-red-dark: #db5a42; 
-$color-red-light: #e3a587;
-$color-brown: #a57f60;
-$color-blue: #20a39e;
-$color-yellow: #ffd275;
+@import "../styles/variables.scss";
 
-// FONT VARIABLES
-$font-primary: 'Rye', cursive;
-$font-secondary: 'Raleway', sans-serif;
-
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-}
-
-
-
-.main-section {
-  text-align: center;
+main {
   display: grid;
-    grid-template-rows: auto 1fr;
-}
-
-.main-section header {
-  font-family: $font-primary;
-  font-size: 3em;
-  display: flex;
-  justify-content: space-around;
-}
-
-.title {
-  text-align: center;
-  margin-top: 70px;
-  font-size: 2em;
-}
-
-.link {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2em;
-  margin-right: 40px;
-  margin-top: 70px;
-  background-color: #f2ce4c;
-  border-radius: 7px;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: inherit;
-  display: inline-block;
+  background-color: $color-blue;
 }

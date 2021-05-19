@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContextonent } from 'react';
 import PropTypes from 'prop-types';
-import FlameOrange from '../images/flame-orange.png';
-import Rib from '../images/rib.png';
+import FlameOrange from '../../images/flame-orange.png';
+import Rib from '../../images/rib.png';
 import './Favorite.scss';
 
 // This whole component can be removed and FavPage can display just display joints in whish isFavorite is true.

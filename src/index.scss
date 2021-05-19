@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Permanent+Marker&display=swap');
+@import "./styles/variables.scss";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
