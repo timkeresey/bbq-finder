@@ -5,6 +5,7 @@ import SearchForm from '../components/SearchForm/SearchForm';
 import JointContainer from '../JointContainer/JointContainer';
 import FavPage from '../components/FavPage/FavPage';
 import Header from '../components/Header/Header';
+import Sidebar from '../components/Sidebar/Sidebar';
 import './App.scss';
 import { getCityID, getJoints } from '../apiCalls.js';
 
@@ -50,17 +51,19 @@ const App = () => {
 
 
     return (
-      <main className='main-section'>
+      <div className='container'>
         <Route exact path='/'>
           
           <Header />
+
+          <Sidebar />
           
           <section>
-           
+           CARDS
           </section>
+
         </Route>
-       
-      </main>
+      </div>
     )
   
 }
