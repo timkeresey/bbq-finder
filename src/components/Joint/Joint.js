@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import FlameBlack from '../images/flame-black.png';
-import FlameOrange from '../images/flame-orange.png';
-import Rib from '../images/rib.png';
+import FlameBlack from '../../images/flame-black.png';
+import FlameOrange from '../../images/flame-orange.png';
+import Rib from '../../images/rib.png';
 
 import './Joint.scss';
 

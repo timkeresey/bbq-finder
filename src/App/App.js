@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 import SearchForm from '../components/SearchForm/SearchForm';
-import JointContainer from '../JointContainer/JointContainer';
+import JointContainer from '../components/JointContainer/JointContainer';
 import FavPage from '../components/FavPage/FavPage';
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
