@@ -51,19 +51,19 @@ const App = () => {
 
 
     return (
-      <div className='container'>
-        <Route exact path='/'>
+      <Route exact path='/'>
+        <div className='container'>
           
-          <Header />
+            <Header />
 
-          <Sidebar />
-          
-          <section>
-           CARDS
-          </section>
+            <Sidebar />
+            
+            <section className='cards'>
+            CARDS
+            </section>
 
-        </Route>
-      </div>
+        </div>
+      </Route>
     )
   
 }

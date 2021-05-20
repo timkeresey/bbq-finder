@@ -1,7 +1,16 @@
 @import "../styles/variables.scss";
 
 .container {
+  margin: 0;
   display: grid;
   grid-template-rows: 80vh 20vh;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content,  14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end sidebar-start] 8rem [sidebar-end];
+}
+
+.cards {
+  background-color: $color-red-light;
+  grid-row: 2 / 3;
+  grid-column: 1 / 11;
+  height: 100%;
+  width: 100%;
 }

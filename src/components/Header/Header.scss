@@ -1,6 +1,8 @@
-
-
+@import "../../styles/variables.scss";
 
 .header {
-   
+    grid-column: 1 / 11;
+    background-color: $color-red-dark;
+    width: 100%;
+    height: 100%;
 }
