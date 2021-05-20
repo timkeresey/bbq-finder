@@ -36,7 +36,7 @@ const SearchForm = ({searchCity}) => {
 
   
   return (
-    <form className='search-form'>
+    <form className='header__search-form'>
       <label htmlFor='city-search'>City</label>
       <input
       data-testid='city-input'
