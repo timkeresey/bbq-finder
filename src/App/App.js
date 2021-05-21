@@ -59,7 +59,7 @@ const App = () => {
             <Sidebar />
             
             <section className='cards'>
-            CARDS
+            CARD
             </section>
 
         </div>
