@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header className="header">
            <h3 className="header__title">BBQ Finder</h3>
-           <h1 className="header__text">Let's find you some BBQ</h1>
+           <h1 className="header__text">Let's get some BBQ!</h1>
            <SearchForm /> 
         </header>
     )
