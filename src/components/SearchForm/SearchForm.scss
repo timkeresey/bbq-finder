@@ -29,6 +29,7 @@
 
     &__btn {
         border: none;
+        text-decoration: none;
         background: $color-red-light;
         border-radius: .25rem;
         padding: .75rem 1rem;
@@ -38,12 +39,17 @@
         font-family: $font-primary;
         font-size: 2rem;
         color: $color-yellow-dark;
-        transition: transform .3s;
+        transition: all .3s;
         
 
         &:hover {
             transform: translateY(-.2rem) scale(1.03);
-            box-shadow: 0 1rem 5rem rgba(black, .1);
+            box-shadow: 0 1rem 3.5rem rgba(black, .3);
+        }
+
+        &:active {
+            transform: translateY(-.1rem) scale(1.0);
+            box-shadow: 0 .5rem 3rem rgba(black, .3);
         }
     }
 }
