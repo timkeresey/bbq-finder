@@ -36,23 +36,25 @@ const SearchForm = ({searchCity}) => {
 
   
   return (
-    <form className='header__search-form'>
-      <label htmlFor='city-search'>City</label>
+    <form className='search-form'>
+      <label className='search-form__label' htmlFor='city-search'>City</label>
       <input
-      data-testid='city-input'
-      id='city-search'
-      name='city'
-      type='text'
-      value={city}
-      onChange={e => setCity(city = e.target.value)}
+        className='search-form__input'
+        data-testid='city-input'
+        id='city-search'
+        name='city'
+        type='text'
+        value={city}
+        onChange={e => setCity(city = e.target.value)}
       />
-      <label htmlFor='stateUS'>State</label>
+      <label className='search-form__label' htmlFor='stateUS'>State</label>
       <input
-      data-testid='state-input'
-      name='stateUS'
-      id='stateUS'
-      list='states'
-      onChange={e => setStateUS(stateUS = e.target.value)}
+        className='search-form__input'
+        data-testid='state-input'
+        name='stateUS'
+        id='stateUS'
+        list='states'
+        onChange={e => setStateUS(stateUS = e.target.value)}
       />
       <datalist id='states'>
         <option value='AL' name='AL'/>
@@ -112,7 +114,7 @@ const SearchForm = ({searchCity}) => {
         <option value='PR' name='PR'/>
         <option value='VI' name='VI'/>
       </datalist>
-      <input className='button' type="submit" value="Search" onClick={e => submitSearch(e)}/>
+      <input className='search-form__btn button' type="submit" value="Search" onClick={e => submitSearch(e)}/>
     </form>
   )
   
