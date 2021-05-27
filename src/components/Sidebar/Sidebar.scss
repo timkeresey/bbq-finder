@@ -6,4 +6,81 @@
     grid-column: 11 / 12;
     height: 100%;
     width: 100%;
+    text-align: center;
+
+    &__heading {
+        font-family: $font-secondary;
+        color: $color-blue;
+        font-size: 2rem;
+        margin-top: 2.5rem;
+    }
+
+    &__checkbox {
+        display: none;
+     }
+
+    &__btn {
+       height: 7rem;
+       width: 7rem;
+       top: 5rem;
+       right: 1rem;
+       position: fixed;
+       z-index: 100;
+       cursor: pointer;
+       display: flex;
+       align-items: center;
+    }
+
+    &__icon {
+        position: relative;
+
+        &,
+        &::before,
+        &::after {
+            width: 4rem;
+            height: 3.5px;
+            background-color: $color-blue;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before {
+            top: -1.3rem;
+        }
+
+        &::after {
+            top: 1.3rem;
+        }
+    }
+
+    &__btn:hover &__icon::before {
+        top: -1.5rem;
+    }
+
+    &__btn:hover &__icon::after {
+        top: 1.5rem;
+    }
+
+
+    &__checkbox:checked + &__btn &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__btn &__icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    &__checkbox:checked + &__btn &__icon::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
 }
