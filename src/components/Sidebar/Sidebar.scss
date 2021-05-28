@@ -37,7 +37,7 @@
     &__btn {
        height: 7rem;
        width: 7rem;
-       top: 5rem;
+       top: 6rem;
        right: 1rem;
        position: fixed;
        z-index: 2000;
@@ -48,11 +48,11 @@
 
     &__icon {
         position: relative;
+        background-color: transparent;
 
-        &,
         &::before,
         &::after {
-            width: 4rem;
+            width: 3rem;
             height: 3.5px;
             background-color: $color-blue;
             display: inline-block;
@@ -67,20 +67,22 @@
         }
 
         &::before {
-            top: -1.3rem;
+            top: -.99rem;
+            transform: rotate(-45deg);
         }
 
         &::after {
-            top: 1.3rem;
+            top: .99rem;
+            transform: rotate(45deg) ;
         }
     }
 
     &__btn:hover &__icon::before {
-        top: -1.5rem;
+        left: .3rem;
     }
 
     &__btn:hover &__icon::after {
-        top: 1.5rem;
+        left: .3rem;
     }
 
     &__checkbox:checked ~ &__background {
@@ -97,12 +99,12 @@
     }
 
     &__checkbox:checked + &__btn &__icon::before {
-        top: 0;
+        top: -.99rem;
         transform: rotate(45deg);
     }
 
     &__checkbox:checked + &__btn &__icon::after {
-        top: 0;
+        top: .99rem;
         transform: rotate(-45deg);
     }
 
