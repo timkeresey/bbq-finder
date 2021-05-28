@@ -11,10 +11,10 @@
     grid-template-columns: minmax(min-content, max-content);
     justify-content: center;
     align-content: start;
-    row-gap: 7rem;
-    padding-top: 10vh;
+    row-gap: 2rem;
+    padding-top: 5vh;
 
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80vh);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 30vh);
     z-index: 10;
     
     &__title {
