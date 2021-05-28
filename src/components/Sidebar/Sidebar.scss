@@ -7,12 +7,27 @@
     height: 100%;
     width: 100%;
     text-align: center;
+    
 
     &__heading {
         font-family: $font-secondary;
         color: $color-blue;
         font-size: 2rem;
         margin-top: 2.5rem;
+        position: fixed;
+        right: 1.6rem;
+        z-index: 2000;
+        transition: all .2s;
+    }
+
+    &__background {
+        background-color: $color-yellow-light;
+        width: 12rem;
+        height: 100%;
+        right: 0;
+        position: fixed;
+        z-index: 1000;
+        transition: all .2s;
     }
 
     &__checkbox {
@@ -25,7 +40,7 @@
        top: 5rem;
        right: 1rem;
        position: fixed;
-       z-index: 100;
+       z-index: 2000;
        cursor: pointer;
        display: flex;
        align-items: center;
@@ -68,6 +83,14 @@
         top: 1.5rem;
     }
 
+    &__checkbox:checked ~ &__background {
+        transform: scale(10);
+        box-shadow: -7rem 0 15rem rgba(0, 0, 0, 0.3);
+    }
+
+    &__checkbox:checked ~ &__heading {
+        transform: scale(4) translateY(1rem) translatex(-7rem);
+    }
 
     &__checkbox:checked + &__btn &__icon {
         background-color: transparent;
