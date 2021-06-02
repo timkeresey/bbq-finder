@@ -1,12 +1,9 @@
-.container {
-  font-family: 'Raleway', sans-serif;
-  display: grid;
-  place-items: center;
-  margin-top: 15px;
-}
+@import "../../styles/variables.scss";
 
-.search-msg {
-  margin-top: 100px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 3em;
+.joints {
+  grid-row: 2 / 3;
+  grid-column: 1 / 11;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }

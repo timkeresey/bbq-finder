@@ -6,6 +6,7 @@ import JointContainer from '../components/JointContainer/JointContainer';
 import FavPage from '../components/FavPage/FavPage';
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
+import Video from '../components/Video/Video';
 import './App.scss';
 import { getCityID, getJoints } from '../apiCalls.js';
 
@@ -58,9 +59,7 @@ const App = () => {
 
             <Sidebar />
             
-            <section className='cards'>
-            CARD
-            </section>
+            <Video />
 
         </div>
       </Route>
