@@ -8,7 +8,7 @@ import Chicken from '../../images/chicken.jpeg';
 
 import './Joint.scss';
 
-const Joint = ({addFav, name, address, phone, pic}) => {
+const Joint = ({name, address, phone, image}) => {
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -21,46 +21,49 @@ const Joint = ({addFav, name, address, phone, pic}) => {
 
   let [isFav, setIsFav] = useState(false);
 
-  const toggleFav = () => {
-    if (isFav === false) {
-      setIsFav(isFav = true);
-      passFav();
-    } else {
-      setIsFav(isFav = false);
-    }
-  }
+  // const toggleFav = () => {
+  //   if (isFav === false) {
+  //     setIsFav(isFav = true);
+  //     passFav();
+  //   } else {
+  //     setIsFav(isFav = false);
+  //   }
+  // }
 
-  let passFav = () => {
-    const newFav = {
-      name: name,
-      address: address,
-      phone: phone
-    };
-    addFav(newFav);
-  }
+  // let passFav = () => {
+  //   const newFav = {
+  //     name: name,
+  //     address: address,
+  //     phone: phone
+  //   };
+  //   addFav(newFav);
+  // }
 
   return (
     <div className='joint'>
       <figure className='joint__img-container'>
-        <img src={Plate} alt='Restaurant thumbnail' className='joint__img' />
+        { image === "" 
+          ? <img src={Plate} alt='Restaurant thumbnail' className='joint__img' />
+          : <img src={image} alt='Restaurant thumbnail' className='joint__img' />
+        }
       </figure>
       <div className='joint__like'>
       <IconContext.Provider value={{ className: 'joint__like--icon' }}>
           <FaFireAlt />
         </IconContext.Provider>
       </div>
-      <h4 className='joint__name'>Restaurant Name</h4>
+      <h4 className='joint__name'>{name}</h4>
       <div className='joint__address'>
         <IconContext.Provider value={{ className: 'joint__address--icon' }}>
           <FaMapMarkerAlt />
         </IconContext.Provider>
-        <p className='joint__address--text'>123 Street Rd. Nowhere 12345</p>
+        <p className='joint__address--text'>{address}</p>
       </div>
       <div className='joint__phone '>
         <IconContext.Provider value={{ className: 'joint__phone--icon' }}>
           <FaPhone />
         </IconContext.Provider>
-        <p className='joint__phone--text'>555 555 5555</p>
+        <p className='joint__phone--text'>{phone}</p>
       </div>
     </div>
   )

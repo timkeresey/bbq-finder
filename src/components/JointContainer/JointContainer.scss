@@ -10,7 +10,7 @@
   
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, .28fr));
-  grid-template-rows: repeat(auto-fit, minmax(40rem, .5fr));
+  grid-template-rows: repeat(auto-fit, minmax(40rem, min-content));
   gap: 8rem;
 
 }
