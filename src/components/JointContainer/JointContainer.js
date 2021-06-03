@@ -6,9 +6,14 @@ import './JointContainer.scss';
 const JointContainer = ({ joints, addFav }) => {
 
   return (
-    <div className='joints'>
-      JOINTS
-    </div>
+    <section className='joints'>
+      <Joint />
+      <Joint />
+      <Joint />
+      <Joint />
+      <Joint />
+      <Joint />
+    </section>
   )
   // if (joints.length === 0) {
   //   return (

@@ -59,7 +59,7 @@ const App = () => {
 
             <Sidebar />
             
-            <Video />
+            <JointContainer />
 
         </div>
       </Route>
