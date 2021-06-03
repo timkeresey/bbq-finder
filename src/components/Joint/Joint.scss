@@ -101,13 +101,15 @@
     font-size: 2rem;
     text-align: center;
     align-items: center;
+    margin-left: 1.5rem;
 
     display: flex;
+    justify-content: center;
 
     &--icon {
       font-size: 3rem;
       color: $color-yellow-light;
-      margin-right: 1.3rem;
+      transform: translateX(1rem);
     }
   }
 
@@ -119,7 +121,7 @@
     margin-bottom: 4rem;
 
     &--icon {
-      transform: rotate(180deg);
+      transform: rotate(180deg) translateX(1rem);
     }
   }
 }
