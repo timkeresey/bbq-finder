@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import FlameBlack from '../../images/flame-black.png';
-import FlameOrange from '../../images/flame-orange.png';
-import Rib from '../../images/rib.png';
+import {IconContext} from 'react-icons';
+
+import {FaPhone, FaMapMarkerAlt, FaFireAlt} from 'react-icons/fa';
 import Plate from '../../images/plate.jpeg';
 import Chicken from '../../images/chicken.jpeg';
 
@@ -45,15 +45,21 @@ const Joint = ({addFav, name, address, phone, pic}) => {
         <img src={Plate} alt='Restaurant thumbnail' className='joint__img' />
       </figure>
       <div className='joint__like'>
-        <i className='joint__like--icon icon-basic-star' />
+      <IconContext.Provider value={{ className: 'joint__like--icon' }}>
+          <FaFireAlt />
+        </IconContext.Provider>
       </div>
       <h4 className='joint__name'>Restaurant Name</h4>
       <div className='joint__address'>
-        <i className='joint__address--icon icon-basic-geolocalize-01' />
+        <IconContext.Provider value={{ className: 'joint__address--icon' }}>
+          <FaMapMarkerAlt />
+        </IconContext.Provider>
         <p className='joint__address--text'>123 Street Rd. Nowhere 12345</p>
       </div>
       <div className='joint__phone '>
-        <i className='joint__phone--icon icon-basic-smartphone' />
+        <IconContext.Provider value={{ className: 'joint__phone--icon' }}>
+          <FaPhone />
+        </IconContext.Provider>
         <p className='joint__phone--text'>555 555 5555</p>
       </div>
     </div>
