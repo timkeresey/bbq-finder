@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
-import SearchForm from '../SearchForm/SearchForm';
-import JointContainer from '../JointContainer/JointContainer';
-import FavPage from '../FavPage/FavPage';
-import './App.css';
+import SearchForm from '../components/SearchForm/SearchForm';
+import JointContainer from '../components/JointContainer/JointContainer';
+import FavPage from '../components/FavPage/FavPage';
+import Header from '../components/Header/Header';
+import Sidebar from '../components/Sidebar/Sidebar';
+import Video from '../components/Video/Video';
+import './App.scss';
 import { getCityID, getJoints } from '../apiCalls.js';
 
 const App = () => {
@@ -49,19 +52,17 @@ const App = () => {
 
 
     return (
-      <main className='main-section'>
-        <Route exact path='/'>
-          <header >
-            <h1 className='title'>Find Some BBQ</h1>
-          </header>
-          <section>
-            <SearchForm searchCity={searchCity} />
+      <Route exact path='/'>
+        <div className='container'>
+          
+            <Header />
+
+            <Sidebar />
             
-            <JointContainer joints={joints}/>
-          </section>
-        </Route>
-       
-      </main>
+            <JointContainer />
+
+        </div>
+      </Route>
     )
   
 }

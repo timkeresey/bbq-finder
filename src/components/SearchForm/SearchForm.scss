@@ -1,0 +1,59 @@
+@import "../../styles/variables.scss";
+
+.search-form {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, min-content);
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+
+
+    &__input {
+        margin-right: 5rem;
+        border: none;
+        background: $color-red-light;
+        border-radius: .25rem;
+        padding: .75rem 1rem;
+        font-family: $font-secondary;
+        font-size: 2rem;
+        color: $color-brown;
+        color: black;
+        caret-color: $color-brown;
+    }
+
+    &__label {
+        font-family: $font-secondary;
+        font-size: 3rem;
+        font-weight: 700;
+        color: $color-yellow-light;
+    }
+
+    &__btn {
+        border: none;
+        text-decoration: none;
+        background: $color-red-light;
+        border-radius: .25rem;
+        padding: .75rem 1rem;
+        background: $color-blue;
+        color: $color-grey-light-1;
+        width: 10rem;
+        font-family: $font-primary;
+        font-size: 2rem;
+        color: $color-yellow-dark;
+        transition: all .15s;
+        cursor: pointer;
+        
+
+        &:hover {
+            transform: translateY(-.2rem) scale(1.03);
+            box-shadow: 0 1rem 3.5rem rgba(black, .3);
+        }
+
+        &:active {
+            transform: translateY(-.1rem) scale(1.0);
+            box-shadow: 0 .5rem 3rem rgba(black, .3);
+        }
+    }
+}

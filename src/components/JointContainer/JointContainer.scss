@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+.joints {
+  grid-row: 2 / 3;
+  grid-column: 1 / 11;
+  z-index: 1;
+  margin-top: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 8rem;
+
+}

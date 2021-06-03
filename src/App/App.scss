@@ -1,0 +1,22 @@
+@import "../styles/variables.scss";
+
+.container {
+  background-color: $color-red-light;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 35rem minmax(65vh, min-content);
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content,  14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end sidebar-start] 12rem [sidebar-end];
+  grid-row: 1 / -1;
+  grid-column: 1 / 12;
+  
+  z-index: -1;
+}
+
+.cards {
+  // background-color: $color-brown;
+  grid-row: 2 / 3;
+  grid-column: 1 / 11;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
