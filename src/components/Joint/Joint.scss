@@ -98,28 +98,36 @@
 
     color: $color-grey-light-1;
     font-family: $font-secondary;
-    font-size: 2rem;
     text-align: center;
     align-items: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 
     display: flex;
-
-    &--icon {
-      font-size: 3rem;
-      color: $color-yellow-light;
-      margin-right: 1.3rem;
-    }
+    flex-direction: column;
+    justify-content: center;
+  
   }
 
   &__address {
-    margin-top: 2rem;
+    font-size: 1.7rem;
+
+    &--icon {
+      font-size: 2rem;
+      color: $color-blue;
+      margin-bottom: .5rem;
+    }
   }
 
   &__phone {
-    margin-bottom: 4rem;
+    font-size: 2rem;
+    margin-bottom: 3rem;
 
     &--icon {
       transform: rotate(180deg);
+      font-size: 2rem;
+      color: $color-blue;
+      margin-bottom: .5rem;
     }
   }
 }

@@ -5,21 +5,25 @@ import './JointContainer.scss';
 
 const JointContainer = ({ joints, addFav }) => {
 
-  return (
-    <section className='joints'>
-      <Joint />
-      <Joint />
-      <Joint />
-      <Joint />
-      <Joint />
-      <Joint />
-    </section>
-  )
-  // if (joints.length === 0) {
-  //   return (
-      
-  //   )
-  // } else {
+  if (joints.length === 0) {
+    return (
+      <h1>NOTHING</h1>
+    )
+    } else {
+      return joints.map(joint => {
+        return (
+          <Joint 
+            key={joint.restaurant.id}
+            name={joint.restaurant.name}
+            address={joint.restaurant.location.address}
+            phone={joint.restaurant.phone_numbers}
+            image={joint.restaurant.featured_image}
+          />
+        )
+      })
+    }
+
+
   //   return joints.map(joint => {
   //     return (
   //       <section key={joint.restaurant.id} data-testid= 'joint-section' className='container'>

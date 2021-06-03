@@ -8,6 +8,7 @@ import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Video from '../components/Video/Video';
 import './App.scss';
+import '../components/JointContainer/JointContainer.scss'
 import { getCityID, getJoints } from '../apiCalls.js';
 
 const App = () => {
@@ -35,8 +36,8 @@ const App = () => {
 
   const searchCity = (city, stateUS) => {
     getCityID(city, stateUS)
-    .then(data => displayJoints(data.location_suggestions[0].id))
-    .catch(error => console.log(error))
+      .then(data => displayJoints(data.location_suggestions[0].id))
+      .catch(error => console.log(error))
   };
 
   // const addFav = (newFav) => {
@@ -52,17 +53,20 @@ const App = () => {
 
 
     return (
-      <Route exact path='/'>
-        <div className='container'>
+      <div className='container'>
+        
+          <Header
+            searchCity={searchCity}
+          />
+
+          <Sidebar />
           
-            <Header />
+          <section className='joints'>
+            <JointContainer joints={joints} />
+          </section>
+          
 
-            <Sidebar />
-            
-            <JointContainer />
-
-        </div>
-      </Route>
+      </div>
     )
   
 }

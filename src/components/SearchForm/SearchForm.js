@@ -54,6 +54,8 @@ const SearchForm = ({searchCity}) => {
         name='stateUS'
         id='stateUS'
         list='states'
+        type='text'
+        value={stateUS}
         onChange={e => setStateUS(stateUS = e.target.value)}
       />
       <datalist id='states'>
