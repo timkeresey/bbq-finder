@@ -21,14 +21,13 @@ const Joint = ({name, address, phone, image}) => {
 
   let [isFav, setIsFav] = useState(false);
 
-  // const toggleFav = () => {
-  //   if (isFav === false) {
-  //     setIsFav(isFav = true);
-  //     passFav();
-  //   } else {
-  //     setIsFav(isFav = false);
-  //   }
-  // }
+  const toggleFav = (e) => {
+    if (isFav === true) {
+      setIsFav(false)
+    } else if (isFav === false) {
+      setIsFav(true)
+    }
+  }
 
   // let passFav = () => {
   //   const newFav = {
@@ -42,16 +41,21 @@ const Joint = ({name, address, phone, image}) => {
   return (
     <div className='joint'>
       <figure className='joint__img-container'>
-        { image === "" 
-          ? <img src={Plate} alt='Restaurant thumbnail' className='joint__img' />
-          : <img src={image} alt='Restaurant thumbnail' className='joint__img' />
+        { image === "" ?
+          <img src={Plate} alt='Restaurant thumbnail' className='joint__img' /> :
+          <img src={image} alt='Restaurant thumbnail' className='joint__img' />
         }
       </figure>
-      <div className='joint__like'>
-      <IconContext.Provider value={{ className: 'joint__like--icon' }}>
-          <FaFireAlt />
-        </IconContext.Provider>
-      </div>
+      <button type='button' className='joint__like' onClick={e => toggleFav(e)}>
+        { isFav === false ?
+          <IconContext.Provider value={{ className: 'joint__like--icon-false' }}>
+            <FaFireAlt />
+          </IconContext.Provider> :
+          <IconContext.Provider value={{ className: 'joint__like--icon-true' }}>
+            <FaFireAlt />
+          </IconContext.Provider>
+        }
+      </button>
       <h4 className='joint__name'>{name}</h4>
       <div className='joint__address'>
         <IconContext.Provider value={{ className: 'joint__address--icon' }}>

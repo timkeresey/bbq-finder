@@ -44,23 +44,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    
 
-    &--icon {
+    &--icon-false {
       font-size: 3.5rem;
       color: $color-yellow-light;
-      cursor: pointer;
       transition: all .15s;
-
-      &:hover {
-        transform: scale(1.08);
-      }
-
-      &:active {
-        transform: scale(1);
-      }
-
     }
 
+    &--icon-true {
+      font-size: 3.5rem;
+      color: $color-red-dark;
+      transition: all .15s;
+    }
+  }
+
+  &__like:hover > &__like--icon-false {
+    transform: scale(1.08);
+  }
+
+  &__like:active > &__like--icon-false {
+    transform: scale(1);
+  }
+
+  &__like:hover > &__like--icon-true {
+    transform: scale(1.08);
+  }
+
+  &__like:active > &__like--icon-true {
+    transform: scale(1);
   }
 
   &__name {
