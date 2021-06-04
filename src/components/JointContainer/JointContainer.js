@@ -23,8 +23,16 @@ const JointContainer = ({ joints, addFav }) => {
       })
     }
 
+}
 
-  //   return joints.map(joint => {
+export default JointContainer;
+
+JointContainer.propTypes = {
+  joints: PropTypes.array,
+  addFav: PropTypes.func
+}
+
+//   return joints.map(joint => {
   //     return (
   //       <section key={joint.restaurant.id} data-testid= 'joint-section' className='container'>
   //         <Joint
@@ -38,11 +46,3 @@ const JointContainer = ({ joints, addFav }) => {
   //     )
   //   })
   // }
-}
-
-export default JointContainer;
-
-JointContainer.propTypes = {
-  joints: PropTypes.array,
-  addFav: PropTypes.func
-}

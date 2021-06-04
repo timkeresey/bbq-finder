@@ -4,10 +4,8 @@ import { Route, Link } from 'react-router-dom';
 
 import SearchForm from '../components/SearchForm/SearchForm';
 import JointContainer from '../components/JointContainer/JointContainer';
-import FavPage from '../components/FavPage/FavPage';
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
-import Video from '../components/Video/Video';
 import './App.scss';
 import '../components/JointContainer/JointContainer.scss'
 import { getCityID, getJoints } from '../apiCalls.js';
