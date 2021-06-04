@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, createContext } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
+
 import SearchForm from '../components/SearchForm/SearchForm';
 import JointContainer from '../components/JointContainer/JointContainer';
 import FavPage from '../components/FavPage/FavPage';
@@ -10,6 +11,9 @@ import Video from '../components/Video/Video';
 import './App.scss';
 import '../components/JointContainer/JointContainer.scss'
 import { getCityID, getJoints } from '../apiCalls.js';
+
+
+export const FavoritesContext = createContext(null);
 
 const App = () => {
   // constructor() {
@@ -24,9 +28,7 @@ const App = () => {
   // }
 
   let [joints, setJoints] = useState([]);
-  // const [city, setCity] = useState('');
-  // const [stateUS, setStateUS] = useState('');
-  // const [cityID, setCityID] = useState('');
+  let [favorites, setFavorites] = useState([])
 
   const displayJoints = (cityID) => {
     getJoints(cityID)
@@ -54,7 +56,7 @@ const App = () => {
 
     return (
       <div className='container'>
-        
+        <FavoritesContext.Provider value={{ favorites, setFavorites }}>
           <Header
             searchCity={searchCity}
           />
@@ -64,8 +66,7 @@ const App = () => {
           <section className='joints'>
             <JointContainer joints={joints} />
           </section>
-          
-
+        </FavoritesContext.Provider>  
       </div>
     )
   

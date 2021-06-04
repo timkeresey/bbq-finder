@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import {IconContext} from 'react-icons';
 
+import { FavoritesContext } from '../../App/App';
 import {FaPhone, FaMapMarkerAlt, FaFireAlt} from 'react-icons/fa';
 import Plate from '../../images/plate.jpeg';
-import Chicken from '../../images/chicken.jpeg';
 
 import './Joint.scss';
 
@@ -20,6 +20,8 @@ const Joint = ({name, address, phone, image}) => {
   // }
 
   let [isFav, setIsFav] = useState(false);
+
+  const {favorites, setFavorites} = useContext(FavoritesContext);
 
   const toggleFav = (e) => {
     if (isFav === true) {
