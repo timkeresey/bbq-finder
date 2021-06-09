@@ -24,21 +24,15 @@ const Joint = ({name, address, phone, image}) => {
   const {favorites, setFavorites} = useContext(FavoritesContext);
 
   const toggleFav = (e) => {
+    let target = {name: name, address: address, phone: phone, image: image};
     if (isFav === true) {
-      setIsFav(false)
+      setIsFav(false);
+      setFavorites(favorites.filter(item => item.name !== name));
     } else if (isFav === false) {
-      setIsFav(true)
+      setIsFav(true);
+      setFavorites([...favorites, target]);
     }
   }
-
-  // let passFav = () => {
-  //   const newFav = {
-  //     name: name,
-  //     address: address,
-  //     phone: phone
-  //   };
-  //   addFav(newFav);
-  // }
 
   return (
     <div className='joint'>
