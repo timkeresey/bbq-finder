@@ -8,17 +8,23 @@ const Favorites = () => {
 
     const {favorites, setFavorites} = useContext(FavoritesContext);
 
-    return (
-        <>
-        <Joint 
-            key={'123'}
-            name={'BBQ House'}
-            address={'123 Street St. Denver 12345'}
-            phone={'(555) 555-5555'}
-            image={Plate}
-        />
-        </>
-    )
+    if (favorites.length === 0) {
+        return (
+          <h1>NOTHING</h1>
+        )
+        } else {
+          return favorites.map(joint => {
+            return (
+              <Joint 
+                key={joint.address}
+                name={joint.name}
+                address={joint.address}
+                phone={joint.phone_numbers}
+                image={joint.image}
+              />
+            )
+          })
+        }
 }
 
 export default Favorites;
