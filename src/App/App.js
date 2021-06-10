@@ -59,7 +59,7 @@ const App = () => {
             searchCity={searchCity}
           />
 
-          <Sidebar />
+          <Sidebar favorites={favorites}/>
           
           <section className='joints'>
             <JointContainer joints={joints} />

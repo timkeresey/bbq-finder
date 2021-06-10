@@ -16,7 +16,13 @@ const Sidebar = () => {
 
     return (
         <div className='sidebar'>
-            <input type='checkbox' className='sidebar__checkbox' id='side-toggle' onClick={handleCheck} checked={checked} />
+            <input
+                type='checkbox'
+                className={!checked ? 'sidebar__checkbox' : 'sidebar__checkbox active'}
+                id='side-toggle'
+                onClick={handleCheck}
+                checked={checked}
+            />
             <label for='side-toggle' className='sidebar__btn'>
                 <span className='sidebar__icon'>&nbsp;</span>
             </label>
