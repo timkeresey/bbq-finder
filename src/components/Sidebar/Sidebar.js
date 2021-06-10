@@ -28,12 +28,10 @@ const Sidebar = () => {
             </label>
             <h3 className='sidebar__heading'>Your Favs</h3>
             <div className='sidebar__background'>
-                
+                <div className='favorites'>
+                    <Favorites />
+                </div>
             </div>
-            <div className='favorites'>
-                <Favorites />
-            </div>
-
         </div>
     )
 }

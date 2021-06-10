@@ -2,12 +2,13 @@
 
 
 .favorites {
+    justify-self: center;
+    grid-row: 2 / 3;
+    margin-left: 3rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, .28fr));
     grid-template-rows: repeat(auto-fit, minmax(40rem, min-content));
     gap: 4rem;
 
-    background-color: $color-yellow-dark;
-    transform: scale(.1);
     z-index: 3000;
 }
