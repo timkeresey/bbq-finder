@@ -5,7 +5,7 @@ import Joint from '../Joint/Joint';
 import './JointContainer.scss';
 import Roast from '../../images/roast.mp4';
 
-const JointContainer = ({ joints, addFav }) => {
+const JointContainer = ({ joints }) => {
 
   if (joints.length === 0) {
     return (
@@ -35,22 +35,5 @@ const JointContainer = ({ joints, addFav }) => {
 export default JointContainer;
 
 JointContainer.propTypes = {
-  joints: PropTypes.array,
-  addFav: PropTypes.func
+  joints: PropTypes.array
 }
-
-//   return joints.map(joint => {
-  //     return (
-  //       <section key={joint.restaurant.id} data-testid= 'joint-section' className='container'>
-  //         <Joint
-  //         addFav={addFav}
-  //         name={joint.restaurant.name}
-  //         address={joint.restaurant.location.address}
-  //         phone={joint.restaurant.phone_numbers}
-  //         pic={joint.restaurant.featured_image}
-  //         />
-  //       </section>
-  //     )
-  //   })
-  // }
-  // 

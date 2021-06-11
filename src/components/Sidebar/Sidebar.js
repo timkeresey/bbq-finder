@@ -1,12 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './Sidebar.scss';
 import '../Favorites/Favorites.scss';
 import Favorites from '../Favorites/Favorites.js';
-import { FavoritesContext } from '../../App/App';
 
 const Sidebar = () => {
-
-    const {favorites, setFavorites} = useContext(FavoritesContext);
 
     const [checked, setChecked] = useState(false)
 

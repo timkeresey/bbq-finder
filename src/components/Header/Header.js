@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Header.scss';
 
 import SearchForm from '../SearchForm/SearchForm';
 
-const Header = ( {searchCity} ) => {
+const Header = ({ searchCity }) => {
 
     return (
         <header className="header">
@@ -15,3 +16,7 @@ const Header = ( {searchCity} ) => {
 }
 
 export default Header;
+
+Header.propTypes = {
+    searchCity: PropTypes.func
+}

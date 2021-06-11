@@ -4,11 +4,10 @@ import Joint from '../Joint/Joint';
 import { FavoritesContext } from '../../App/App';
 import {IconContext} from 'react-icons';
 import { FaFireAlt } from 'react-icons/fa';
-import Plate from '../../images/plate.jpeg';
 
 const Favorites = () => {
 
-    const {favorites, setFavorites} = useContext(FavoritesContext);
+    const {favorites} = useContext(FavoritesContext);
 
     if (favorites.length === 0) {
         return (

@@ -1,32 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './SearchForm.scss';
 
-// Maybe find a simple api with all the state abbreviations, or remove the state input.
+const SearchForm = ({ searchCity }) => { 
 
-const SearchForm = ({searchCity}) => { 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     city: '',
-  //     stateUS: '',
-  //     cityID: ''
-  //   }
-  // }
   let [city, setCity] = useState('');
   let [stateUS, setStateUS] = useState('');
-  // let [cityID, setCityID] = useState('');
-
 
   const resetInputs = () => {
     setCity(city = '');
     setStateUS(stateUS = '');
-    // setCityID(cityID = '');
   }
-
-  // const handleChange = (e) => {
-  //   this.setState({[e.target.name]: e.target.value});
-  // }
 
   const submitSearch = (e) => {
     e.preventDefault();
