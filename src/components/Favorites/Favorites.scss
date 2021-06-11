@@ -25,17 +25,19 @@
   align-self: center;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 5rem;
+  gap: 7rem;
+  transform: translateY(6rem);
   
   &__text {
-    font-family: $font-primary;
+    font-family: $font-secondary;
     font-size: 6rem;
+    font-weight: 600;
     letter-spacing: .3rem;
     color: $color-brown;
   }
 
   &__icon {
-    font-size: 10rem;
+    font-size: 12rem;
     align-self: center;
     color: $color-red-dark;
   }

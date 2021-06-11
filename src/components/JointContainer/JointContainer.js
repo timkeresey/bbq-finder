@@ -11,7 +11,7 @@ const JointContainer = ({ joints, addFav }) => {
     return (
       <div className='video'>
         <VideoLooper className='video__embed' source={Roast} start={0} end={4} />
-        <h2 className='video__text'>Use the Search Bar!</h2>
+        <h2 className='video__text'>Search for some BBQ!</h2>
       </div>
     )
     } else {

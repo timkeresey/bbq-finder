@@ -24,14 +24,15 @@
   &__embed {
     border-style: solid;
     border-width: 4rem;
-    border-color: $color-blue;
+    border-color: $color-yellow-dark;
   }
 
   &__text {
     text-align: center;
     font-size: 6rem;
     font-weight: 900;
-    font-family: $font-secondary;
+    font-family: $font-primary;
+    letter-spacing: .3rem;
     color: $color-red-dark;
     margin-top: 7rem;
   }

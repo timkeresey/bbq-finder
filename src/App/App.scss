@@ -5,7 +5,7 @@
   margin: 0;
   display: grid;
   grid-template-rows: 35rem minmax(65vh, min-content);
-  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content,  14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end sidebar-start] 12rem [sidebar-end];
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content,  14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end sidebar-start] 20rem [sidebar-end];
   grid-row: 1 / -1;
   grid-column: 1 / 12;
   
