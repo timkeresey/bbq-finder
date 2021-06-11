@@ -1,13 +1,18 @@
 import React from 'react';
+import VideoLooper from 'react-video-looper';
 import PropTypes from 'prop-types';
 import Joint from '../Joint/Joint';
 import './JointContainer.scss';
+import Roast from '../../images/roast.mp4';
 
 const JointContainer = ({ joints, addFav }) => {
 
   if (joints.length === 0) {
     return (
-      <h1>NOTHING</h1>
+      <div className='video'>
+        <VideoLooper className='video__embed' source={Roast} start={0} end={4} />
+        <h2 className='video__text'>Search for some BBQ!</h2>
+      </div>
     )
     } else {
       return joints.map(joint => {
@@ -48,3 +53,4 @@ JointContainer.propTypes = {
   //     )
   //   })
   // }
+  // 

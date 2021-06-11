@@ -8,8 +8,9 @@
     grid-row: 2 / 3;
     margin-left: 6rem;
     margin-right: 6rem;
+    margin-bottom: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, .6fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, .54fr));
     grid-template-rows: repeat(auto-fit, minmax(45rem, min-content));
     gap: 4rem;
 
@@ -18,4 +19,26 @@
     &::-webkit-scrollbar {
         display: none;
       }
+}
+
+.pick {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 7rem;
+  transform: translateY(6rem);
+  
+  &__text {
+    font-family: $font-secondary;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: .3rem;
+    color: $color-brown;
+  }
+
+  &__icon {
+    font-size: 12rem;
+    align-self: center;
+    color: $color-red-dark;
+  }
 }
