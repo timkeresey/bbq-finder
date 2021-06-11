@@ -17,7 +17,8 @@ const Favorites = () => {
             return (
               <Joint 
                 favorited={true}
-                key={joint.address}
+                id={joint.id}
+                key={joint.id}
                 name={joint.name}
                 address={joint.address}
                 phone={joint.phone}

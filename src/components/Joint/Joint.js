@@ -9,7 +9,7 @@ import Plate from '../../images/plate.jpeg';
 
 import './Joint.scss';
 
-const Joint = ({favorited, name, address, phone, image}) => {
+const Joint = ({favorited, id, name, address, phone, image}) => {
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -26,7 +26,7 @@ const Joint = ({favorited, name, address, phone, image}) => {
   const {favorites, setFavorites} = useContext(FavoritesContext);
 
   const toggleFav = (e) => {
-    let target = {name: name, address: address, phone: phone, image: image};
+    let target = {id:id, name: name, address: address, phone: phone, image: image};
     if (isFav === true) {
       setIsFav(false);
       setFavorites(favorites.filter(item => item.name !== name));
@@ -57,7 +57,7 @@ const Joint = ({favorited, name, address, phone, image}) => {
       </button> :
       <div className='joint__check'>
         <h4 className='joint__check--text'>Did you have it?</h4>
-        <button className='joint__check--btn'>
+        <button className='joint__check--btn' onClick={e => setCheck(!check)}>
         {!check ?
         <IconContext.Provider value={{ className: 'joint__check--icon-false' }}>
           <BiSquareRounded />
@@ -95,25 +95,3 @@ Joint.propTypes = {
   phone: PropTypes.string,
   addFav: PropTypes.func
 }
-
-
-
-{/* <div className='card'>
-{
-pic ?
-<img src={pic} alt='restaurant'/> :
-<img src={Rib} alt='rib' />
-}
-<article className='info'>
-  <p className='name'>{name}</p>
-  <p className='address'>{address}</p>
-  <p className='phone'>{phone}</p>
-</article>
-<button className='flame-icon' onClick={() => toggleFav()} >
-{
-isFav === false
-  ? <img src={FlameBlack} alt='favorite'/>
-  : <img src={FlameOrange} alt='unfavorite'/>
-}
-</button>
-</div> */}

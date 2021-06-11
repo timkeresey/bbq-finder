@@ -14,6 +14,7 @@ const JointContainer = ({ joints, addFav }) => {
         return (
           <Joint 
             favorited={false}
+            id={joint.restaurant.id}
             key={joint.restaurant.id}
             name={joint.restaurant.name}
             address={joint.restaurant.location.address}
