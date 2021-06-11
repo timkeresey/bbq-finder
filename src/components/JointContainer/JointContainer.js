@@ -13,6 +13,7 @@ const JointContainer = ({ joints, addFav }) => {
       return joints.map(joint => {
         return (
           <Joint 
+            favorited={false}
             key={joint.restaurant.id}
             name={joint.restaurant.name}
             address={joint.restaurant.location.address}

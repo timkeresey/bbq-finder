@@ -29,7 +29,7 @@ const Sidebar = () => {
             <h3 className='sidebar__heading'>Your Favs</h3>
             <div className='sidebar__background'>
                 <div className='favorites'>
-                    <Favorites />
+                    {checked ? <Favorites /> : <></>}
                 </div>
             </div>
         </div>

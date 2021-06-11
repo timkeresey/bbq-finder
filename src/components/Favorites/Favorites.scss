@@ -4,9 +4,10 @@
 .favorites {
     justify-self: center;
     grid-row: 2 / 3;
-    margin-left: 3rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, .28fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, .6fr));
     grid-template-rows: repeat(auto-fit, minmax(40rem, min-content));
     gap: 4rem;
 

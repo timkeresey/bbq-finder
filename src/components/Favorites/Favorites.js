@@ -16,10 +16,11 @@ const Favorites = () => {
           return favorites.map(joint => {
             return (
               <Joint 
+                favorited={true}
                 key={joint.address}
                 name={joint.name}
                 address={joint.address}
-                phone={joint.phone_numbers}
+                phone={joint.phone}
                 image={joint.image}
               />
             )
