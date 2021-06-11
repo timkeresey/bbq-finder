@@ -8,6 +8,7 @@
     grid-row: 2 / 3;
     margin-left: 6rem;
     margin-right: 6rem;
+    margin-bottom: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, .6fr));
     grid-template-rows: repeat(auto-fit, minmax(45rem, min-content));
@@ -18,4 +19,26 @@
     &::-webkit-scrollbar {
         display: none;
       }
+}
+
+.pick {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 5rem;
+  
+  &__text {
+    font-family: $font-primary;
+    font-size: 6rem;
+    letter-spacing: .3rem;
+    color: $color-brown;
+    
+  }
+
+  &__icon {
+    font-size: 10rem;
+    align-self: center;
+    color: $color-red-dark;
+    
+  }
 }
