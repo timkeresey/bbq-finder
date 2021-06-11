@@ -12,6 +12,22 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 45%;
+  }
+
+  @media only screen and (max-width: $bp-med) {
+    font-size: 35%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 25%;
+  }
+
+  @media only screen and (max-width: $bp-tiny) {
+    font-size: 17%;
+  }
 }
 
 body {

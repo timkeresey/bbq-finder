@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useContext, createContext } from 'react';
-import PropTypes from 'prop-types';
-import { Route, Link } from 'react-router-dom';
-
-import SearchForm from '../components/SearchForm/SearchForm';
+import React, { useState, createContext } from 'react';
+import VideoLooper from 'react-video-looper';
 import JointContainer from '../components/JointContainer/JointContainer';
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
+import Roast from '../images/roast.mp4';
 import './App.scss';
 import '../components/JointContainer/JointContainer.scss'
 import { getCityID, getJoints } from '../apiCalls.js';
@@ -14,16 +12,6 @@ import { getCityID, getJoints } from '../apiCalls.js';
 export const FavoritesContext = createContext(null);
 
 const App = () => {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     city: '',
-  //     stateUS: '',
-  //     cityID: '',
-  //     joints: [],
-  //     favs: []
-  //   }
-  // }
 
   let [joints, setJoints] = useState([]);
   let [favorites, setFavorites] = useState([])
@@ -40,39 +28,29 @@ const App = () => {
       .catch(error => console.log(error))
   };
 
-  // const addFav = (newFav) => {
-  //   this.setState({ favs: [...this.state.favs, newFav] });
-  // }
-
-  // const unFav = (phone) => {
-  //   const favUpdate = this.state.favs.filter(fav => {
-  //     return fav.phone !== phone
-  //   });
-  //   this.setState({ favs: favUpdate });
-  // }
-
-
     return (
       <div className='container'>
         <FavoritesContext.Provider value={{ favorites, setFavorites }}>
-          <Header
-            searchCity={searchCity}
-          />
 
-          <Sidebar favorites={favorites}/>
+          <Header searchCity={searchCity} />
+
+          <Sidebar favorites={favorites} />
           
+          {joints.length === 0 ?
+          <div className='video'>
+            <VideoLooper className='video__embed' source={Roast} start={0} end={4} />
+            <h2 className='video__text'>Search for some BBQ!</h2>
+          </div> :
           <section className='joints'>
             <JointContainer joints={joints} />
           </section>
-        </FavoritesContext.Provider>  
+          }
+
+        </FavoritesContext.Provider> 
+
       </div>
     )
   
 }
 
 export default App;
-
-// <Route path='/favorites' render={() => <FavPage />} />
-// <nav className='link'>
-//    <Link to='/favorites' className='fav-link'>Favorite Spots</Link>
-// </nav>

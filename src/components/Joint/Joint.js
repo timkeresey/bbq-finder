@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import {IconContext} from 'react-icons';
 
@@ -9,16 +9,7 @@ import Plate from '../../images/plate.jpeg';
 
 import './Joint.scss';
 
-const Joint = ({favorited, id, name, address, phone, image}) => {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     name: props.name,
-  //     address: props.address,
-  //     phone: props.phone,
-  //     isFav: false
-  //   }
-  // }
+const Joint = ({ favorited, id, name, address, phone, image }) => {
 
   let [isFav, setIsFav] = useState(false);
   let [check, setCheck] = useState(false);
@@ -90,8 +81,9 @@ const Joint = ({favorited, id, name, address, phone, image}) => {
 export default Joint;
 
 Joint.propTypes = {
+  favorited: PropTypes.bool,
   name: PropTypes.string,
   address: PropTypes.string,
   phone: PropTypes.string,
-  addFav: PropTypes.func
+  image: PropTypes.string
 }
