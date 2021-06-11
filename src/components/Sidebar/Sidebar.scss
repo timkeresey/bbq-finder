@@ -12,11 +12,11 @@
     &__heading {
         font-family: $font-primary;
         color: $color-blue;
-        font-size: 2rem;
+        font-size: 4rem;
         letter-spacing: .3rem;
         margin-top: 2.5rem;
         position: fixed;
-        right: 2.3rem;
+        right: 3rem;
         z-index: 2000;
         transition: all .2s;
     }
@@ -42,7 +42,7 @@
     &__btn {
        height: 7rem;
        width: 7rem;
-       top: 6rem;
+       top: 14rem;
        right: 4rem;
        position: fixed;
        z-index: 2000;
@@ -61,6 +61,16 @@
             height: 4.5px;
             background-color: $color-blue;
             display: inline-block;
+
+            @media only screen and (max-width: $bp-large) {
+                width: 3.2rem;
+                height: 4px;
+              }
+
+            @media only screen and (max-width: $bp-med) {
+                width: 3.5rem;
+                height: 4.1px;
+              }
         }
 
         &::before,
@@ -96,7 +106,7 @@
     }
 
     &__checkbox:checked ~ &__heading {
-        transform: scale(3) translateY(2rem) translatex(-13rem);
+        transform: scale(2) translateY(3rem) translatex(-10vw);
     }
 
     &__checkbox:checked + &__btn &__icon {
