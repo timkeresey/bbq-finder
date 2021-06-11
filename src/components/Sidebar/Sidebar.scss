@@ -28,6 +28,10 @@
         position: fixed;
         z-index: 1000;
         transition: all .2s;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 15rem 1fr;
     }
 
     &__checkbox {
@@ -86,12 +90,12 @@
     }
 
     &__checkbox:checked ~ &__background {
-        transform: scale(10);
+        width: 50%;
         box-shadow: -7rem 0 15rem rgba(0, 0, 0, 0.3);
     }
 
     &__checkbox:checked ~ &__heading {
-        transform: scale(4) translateY(1rem) translatex(-7rem);
+        transform: scale(4) translateY(1rem) translatex(-8rem);
     }
 
     &__checkbox:checked + &__btn &__icon {

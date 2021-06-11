@@ -13,6 +13,8 @@ const JointContainer = ({ joints, addFav }) => {
       return joints.map(joint => {
         return (
           <Joint 
+            favorited={false}
+            id={joint.restaurant.id}
             key={joint.restaurant.id}
             name={joint.restaurant.name}
             address={joint.restaurant.location.address}
@@ -23,8 +25,16 @@ const JointContainer = ({ joints, addFav }) => {
       })
     }
 
+}
 
-  //   return joints.map(joint => {
+export default JointContainer;
+
+JointContainer.propTypes = {
+  joints: PropTypes.array,
+  addFav: PropTypes.func
+}
+
+//   return joints.map(joint => {
   //     return (
   //       <section key={joint.restaurant.id} data-testid= 'joint-section' className='container'>
   //         <Joint
@@ -38,11 +48,3 @@ const JointContainer = ({ joints, addFav }) => {
   //     )
   //   })
   // }
-}
-
-export default JointContainer;
-
-JointContainer.propTypes = {
-  joints: PropTypes.array,
-  addFav: PropTypes.func
-}
