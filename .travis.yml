@@ -3,10 +3,3 @@ node_js:
 - '14'
 notifications:
   email: false
-deploy:
-  provider: heroku
-  api_key:
-    secure: e57b3696-d517-4d74-92f2-9d589e164178
-  app: bbq-finder
-  on:
-    branch: main
