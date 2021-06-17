@@ -10,3 +10,4 @@ deploy:
   app: bbq-finder
   on:
     repo: timkeresey/bbq-finder
+    branch: main
